@@ -9,10 +9,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RutinaComponent } from './components/rutina/rutina/rutina.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    RutinaComponent,
   ],
   imports: [
     BrowserModule,
