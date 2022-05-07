@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RutinaComponent } from './components/rutina/rutina/rutina.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { RutinaComponent } from './components/rutina/rutina/rutina.component';
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

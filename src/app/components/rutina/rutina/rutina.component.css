@@ -1,0 +1,16 @@
+table {
+  width: 80%;
+}
+.rutina-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ellipsis {
+  max-width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.acciones {
+  text-align: center;
+}
