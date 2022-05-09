@@ -1,8 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import { RutinaService } from 'src/app/services/rutina/rutina.service';
 import { Subscription } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ObjectTypeDeclaration } from 'typescript';
 
 @Component({
   selector: 'app-rutina',
