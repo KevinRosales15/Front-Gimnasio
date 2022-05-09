@@ -21,6 +21,8 @@ import { InstructorComponent } from './components/roles/instructor/instructor.co
 import { MasterComponent } from './components/roles/master/master.component';
 import { LoginComponent } from './components/roles/login/login.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
+import { SucursalComponent } from './components/sucursal/sucursal.component';
+import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { ToastrModule } from 'ngx-toastr';
 
 
@@ -35,6 +37,9 @@ import { ToastrModule } from 'ngx-toastr';
     MasterComponent,
     LoginComponent,
     PagoPlataformaComponent,
+    SucursalComponent,
+    ListarSucursalComponent
+
   ],
   imports: [
     BrowserModule,

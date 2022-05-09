@@ -1,0 +1,38 @@
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <span class="titulo">LISTADO DE SUCURSALES</span>
+                        <button class="btn btn-success float-end" routerLink="/crear-sucursal">CREAR</button>
+                        <table *ngIf="listSucursal.length>0 " class="table table-striped mt-3">
+                            <thead>
+                              <tr>
+                                <th scope="col">Número Sucursal</th>
+                                <th scope="col">Dirección</th>
+                                <th scope="col">Cantidad Clientes</th>
+                                <th scope="col">Cantidad Empleados</th>
+                                <th scope="col"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let sucursal of listSucursal">
+                                <td>{{sucursal.noSucursal}}</td>
+                                <td>{{sucursal.direccion}}</td>
+                                <td>{{sucursal.cantidadClientes}}</td>
+                                <td>{{sucursal.cantidadEmpleados}}</td>
+                                <td>
+                                    <i  [routerLink]="['/editar-sucursal']"  class="editar fa-solid fa-pen-to-square"></i>
+                                    <i (click)="eliminarSucursal(sucursal._id)" class="eliminar fa-solid fa-delete-left"></i>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3 *ngIf="listSucursal.length == 0 " style="text-align: center; margin-top: 20px;">No hay Sucursales para mostrar</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

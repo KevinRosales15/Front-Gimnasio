@@ -1,0 +1,11 @@
+.editar {
+    cursor: pointer;
+    margin-left: 10px;
+    color: rgb(5, 122, 218);
+}
+
+.eliminar {
+    cursor: pointer;
+    margin-left: 10px;
+    color: rgb(218, 5, 5);
+}
