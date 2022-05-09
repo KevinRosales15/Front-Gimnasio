@@ -16,6 +16,10 @@ import { FormsModule } from '@angular/forms';
 import { RegistroEmpleadosComponent } from './components/registro_empleados/registro-empleados/registro-empleados.component';
 import { AuthService } from './services/auth.service';
 import { LoginEmpleadosComponent } from './components/login_empleados/login-empleados/login-empleados.component';
+import { AdminComponent } from './components/roles/admin/admin.component';
+import { InstructorComponent } from './components/roles/instructor/instructor.component';
+import { MasterComponent } from './components/roles/master/master.component';
+import { LoginComponent } from './components/roles/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { LoginEmpleadosComponent } from './components/login_empleados/login-empl
     RutinaComponent,
     LoginEmpleadosComponent,
     RegistroEmpleadosComponent,
+    AdminComponent,
+    InstructorComponent,
+    MasterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
