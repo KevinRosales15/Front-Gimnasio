@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="login">
+      <div class="login-triangle"></div>
+  
+      <h2 class="login-header">Registrar Empleado</h2>
+  
+      <form #frmRegister="ngForm" class="login-container" (ngSubmit)="onRegister(frmRegister)">
+        <p>
+          <input type="text" name="name" placeholder="Nombre" ngModel required>
+        </p>
+        <p>
+            <input type="number" name="dpi" placeholder="DPI" ngModel required>
+          </p>
+          <p>
+            <input type="date" name="date" placeholder="Fecha de nacimiento" ngModel required>
+          </p>
+        <p>
+          <input type="email" name="email" placeholder="Correo" ngModel required>
+        </p>
+        <p>
+            <input type="number" name="phone" placeholder="Numero de celular" ngModel required>
+          </p>
+          <p>
+            <input type="number" name="branc" placeholder="No. de sucursal" ngModel required>
+          </p>
+          <p>
+            <input type="text" name="rol" placeholder="Puesto/rol" ngModel required>
+          </p>
+        <p>
+          <input type="password" name="password" placeholder="Contraseña" ngModel required>
+        </p>
+        <p>
+          <input type="submit" value="Registrar">
+        </p>
+      </form>
+    </div>
+  </div>

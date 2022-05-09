@@ -6,7 +6,8 @@ export class SharedEndPoints {
         this.API_URL = API_URL;
         this.END_POINTS = {
             REGISTRO_CLIENTES: this.API_URL + '/registro_clientes',
-            REGISTRO_EMPLEADOS: this.API_URL + '/registro_empleados'
+            REGISTRO_EMPLEADOS: this.API_URL + '/registro_empleados',
+            RUTINAS: this.API_URL + '/rutina',
         }
     }
 }
