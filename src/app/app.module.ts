@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RutinaComponent } from './components/rutina/rutina/rutina.component';
 import {MatTableModule} from '@angular/material/table';
@@ -20,6 +20,9 @@ import { AdminComponent } from './components/roles/admin/admin.component';
 import { InstructorComponent } from './components/roles/instructor/instructor.component';
 import { MasterComponent } from './components/roles/master/master.component';
 import { LoginComponent } from './components/roles/login/login.component';
+import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { LoginComponent } from './components/roles/login/login.component';
     InstructorComponent,
     MasterComponent,
     LoginComponent,
+    PagoPlataformaComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,7 @@ import { LoginComponent } from './components/roles/login/login.component';
     ReactiveFormsModule,
     MatTableModule,
     MatIconModule,
+    ToastrModule.forRoot(),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

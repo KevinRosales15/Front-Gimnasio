@@ -1,0 +1,13 @@
+.text-danger {
+    text-align: start;
+}
+
+#back_color {
+    background: #1a2a6c;
+    background: -webkit-linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+}
+
+label, h3 {
+    color: white;
+}
