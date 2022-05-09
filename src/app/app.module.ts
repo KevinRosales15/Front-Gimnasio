@@ -12,16 +12,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RutinaComponent } from './components/rutina/rutina/rutina.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { RegistroEmpleadosComponent } from './components/registro_empleados/registro-empleados/registro-empleados.component';
+import { AuthService } from './services/auth.service';
+import { LoginEmpleadosComponent } from './components/login_empleados/login-empleados/login-empleados.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RutinaComponent,
+    LoginEmpleadosComponent,
+    RegistroEmpleadosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     MatCardModule,
     MatButtonModule,
@@ -30,7 +37,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
