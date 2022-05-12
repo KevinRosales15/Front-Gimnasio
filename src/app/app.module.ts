@@ -10,16 +10,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RutinaComponent } from './components/rutina/rutina/rutina.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { RegistroEmpleadosComponent } from './components/registro_empleados/registro-empleados/registro-empleados.component';
 import { AuthService } from './services/auth.service';
-import { LoginEmpleadosComponent } from './components/login_empleados/login-empleados/login-empleados.component';
 import { AdminComponent } from './components/roles/admin/admin.component';
 import { InstructorComponent } from './components/roles/instructor/instructor.component';
 import { MasterComponent } from './components/roles/master/master.component';
-import { LoginComponent } from './components/roles/login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
 import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
@@ -30,7 +29,6 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     AppComponent,
     RutinaComponent,
-    LoginEmpleadosComponent,
     RegistroEmpleadosComponent,
     AdminComponent,
     InstructorComponent,

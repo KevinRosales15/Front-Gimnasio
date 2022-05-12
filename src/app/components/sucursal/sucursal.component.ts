@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { sucursal } from 'src/app/models/sucursal';
 import { ToastrService } from 'ngx-toastr';
-import { SucursalService } from 'src/app/services/sucursal.service';
+import { SucursalService } from 'src/app/services/sucursal/sucursal.service';
 import { Subscription } from 'rxjs';
 
 
