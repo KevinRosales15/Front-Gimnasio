@@ -1,42 +1,51 @@
-<table mat-table [dataSource]="data" class="mat-elevation-z8">
+<body>
+  <div class ="ButtonHome">
+    <button  routerLink="/master"><i class="fa-solid fa-angles-left"></i>Volver</button>
+  </div>
+  <div class="container mt-5">
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
 
-  <ng-container matColumnDef="id_rutina">
-    <th mat-header-cell *matHeaderCellDef> Rutina </th>
-    <td mat-cell *matCellDef="let element"> {{element.id_rutina}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="nivel">
-    <th mat-header-cell *matHeaderCellDef> Nivel </th>
-    <td mat-cell *matCellDef="let element"> {{element.nivel}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="dia">
-    <th mat-header-cell *matHeaderCellDef> Día </th>
-    <td mat-cell *matCellDef="let element"> {{element.dia}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="musculo">
-    <th mat-header-cell *matHeaderCellDef> Músculo </th>
-    <td mat-cell *matCellDef="let element"> {{element.musculo}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="ejercicios">
-    <th mat-header-cell *matHeaderCellDef> Ejercicios </th>
-    <td class="ellipsis" mat-cell *matCellDef="let element"> {{element.ejercicios}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef class="acciones"> Acciones </th>
-    <td mat-cell *matCellDef="let element">
-      <div class="rutina-buttons">
-        <button mat-raised-button><mat-icon>visibility</mat-icon></button>
-        <button mat-raised-button color="primary"><mat-icon>edit</mat-icon></button>
-        <button mat-raised-button color="warn"><mat-icon>delete</mat-icon></button>
-      </div>
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-</table>
+      <ng-container matColumnDef="id_rutina">
+        <th mat-header-cell *matHeaderCellDef> Rutina </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_rutina}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="nivel">
+        <th mat-header-cell *matHeaderCellDef> Nivel </th>
+        <td mat-cell *matCellDef="let element"> {{element.nivel}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="dia">
+        <th mat-header-cell *matHeaderCellDef> Día </th>
+        <td mat-cell *matCellDef="let element"> {{element.dia}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="musculo">
+        <th mat-header-cell *matHeaderCellDef> Músculo </th>
+        <td mat-cell *matCellDef="let element"> {{element.musculo}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="ejercicios">
+        <th mat-header-cell *matHeaderCellDef> Ejercicios </th>
+        <td class="ellipsis" mat-cell *matCellDef="let element"> {{element.ejercicios}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="acciones"> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <div class="rutina-buttons">
+            <button mat-raised-button><mat-icon>visibility</mat-icon></button>
+            <button mat-raised-button color="primary"><mat-icon>edit</mat-icon></button>
+            <button mat-raised-button color="warn"><mat-icon>delete</mat-icon></button>
+          </div>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>
+  </div>
+  
+  
+</body>

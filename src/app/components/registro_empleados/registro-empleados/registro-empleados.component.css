@@ -88,6 +88,29 @@ body {
   border-color: #05a;
 }
 
+.ButtonHome button {
+  background: #fff;
+  color: black;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 120px;
+  height: 40px;
+  margin-top: 25px;
+  margin-left: 65px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.ButtonHome button:hover {
+  background: rgb(34, 114, 235);
+  color: white;
+}
+
+.ButtonHome i {
+  color: black;
+  padding-right: 8px;
+}
+
 
 
 /*-----------------------INDEX HTML-------------------------------*/

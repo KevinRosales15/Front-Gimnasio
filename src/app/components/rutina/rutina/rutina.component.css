@@ -1,5 +1,6 @@
 table {
   width: 80%;
+  position: center;
 }
 .rutina-buttons {
   display: flex;
@@ -13,4 +14,31 @@ table {
 }
 .acciones {
   text-align: center;
+}
+
+.ButtonHome button {
+  background: #fff;
+  color: black;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 120px;
+  height: 40px;
+  margin-top: 25px;
+  margin-left: 65px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.ButtonHome button:hover {
+  background: rgb(8, 70, 240);
+  color: white;
+}
+
+.ButtonHome i {
+  color: black;
+  padding-right: 8px;
+}
+
+.tabla{
+  position: center;
 }

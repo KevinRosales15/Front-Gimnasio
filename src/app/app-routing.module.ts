@@ -7,17 +7,19 @@ import { AppComponent } from './app.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { RutinaComponent } from './components/rutina/rutina/rutina.component';
+import { LoginComponent } from './components/roles/login/login.component';
+import { MasterComponent } from './components/roles/master/master.component';
 
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'register', component: RegistroEmpleadosComponent },
-  { path: 'login', component: LoginEmpleadosComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'RegistroEmpleado', component: RegistroEmpleadosComponent },
+  { path: 'master', component: MasterComponent },
   { path: 'listar-sucursal', component: ListarSucursalComponent },
   { path: 'crear-sucursal', component: SucursalComponent },
   { path: 'editar-sucursal', component: SucursalComponent },
-  { path: 'rutina', component: RutinaComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: 'rutinas', component: RutinaComponent },
+  //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({
