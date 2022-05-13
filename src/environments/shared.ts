@@ -11,7 +11,8 @@ export class SharedEndPoints {
             RUTINAS: this.API_URL + '/rutina',
             LUHN: this.API_URL + '/luhn',
             VERIFYEMAIL: this.API_URL + '/verifyEmail',
-            SUCURSAL: this.API_URL + '/sucursal'
+            SUCURSAL: this.API_URL + '/sucursal',
+            LOGIN:this.API_URL + '/login',
         }
     }
 }

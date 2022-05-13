@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginEmpleadosComponent } from './components/login_empleados/login-empleados/login-empleados.component';
 import { RegistroEmpleadosComponent } from './components/registro_empleados/registro-empleados/registro-empleados.component';
 import { AppComponent } from './app.component';
-
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { RutinaComponent } from './components/rutina/rutina/rutina.component';
-import { LoginComponent } from './components/roles/login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { MasterComponent } from './components/roles/master/master.component';
+import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
 
 
 const routes: Routes = [
@@ -19,6 +18,7 @@ const routes: Routes = [
   { path: 'crear-sucursal', component: SucursalComponent },
   { path: 'editar-sucursal', component: SucursalComponent },
   { path: 'rutinas', component: RutinaComponent },
+  { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
 
