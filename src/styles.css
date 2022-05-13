@@ -13,3 +13,13 @@ body{
     font-size: xx-large;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+.TooltipEditar {
+    background: rgba(5, 122, 218, 0.815);
+}
+
+.TooltipEliminar {
+    background: rgba(218, 5, 5, 0.829);
+}
+
+

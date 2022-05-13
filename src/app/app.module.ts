@@ -24,6 +24,11 @@ import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plata
 import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { ToastrModule } from 'ngx-toastr';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PaginacionPipe } from './pipes/paginacion.pipe';
+
+
 
 
 @NgModule({
@@ -38,7 +43,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     PagoPlataformaComponent,
     SucursalComponent,
-    ListarSucursalComponent
+    ListarSucursalComponent,
+    PaginacionPipe,
 
   ],
   imports: [
@@ -54,6 +60,8 @@ import { ToastrModule } from 'ngx-toastr';
     MatTableModule,
     MatIconModule,
     ToastrModule.forRoot(),
+    MatTooltipModule,
+    MatPaginatorModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
