@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SucursalService } from 'src/app/services/sucursal.service';
+import { SucursalService } from 'src/app/services/sucursal/sucursal.service';
 import { Subscription } from 'rxjs';
 import { sucursal } from 'src/app/models/sucursal';
 import { ToastrService } from 'ngx-toastr';

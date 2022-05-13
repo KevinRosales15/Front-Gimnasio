@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PagoPlataformaService } from 'src/app/services/pago-plataforma.service';
+import { PagoPlataformaService } from 'src/app/services/pago-plataforma/pago-plataforma.service';
 import { Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
