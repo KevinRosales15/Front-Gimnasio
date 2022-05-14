@@ -23,6 +23,7 @@ import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plata
 import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatTableModule,
     MatIconModule,
     ToastrModule.forRoot(),
+    SocketIoModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

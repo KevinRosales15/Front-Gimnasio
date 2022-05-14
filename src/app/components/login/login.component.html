@@ -1,34 +1,35 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<form class="formulario">
-    <h1>Banco Vivienda</h1>
+<body class="img js-fullheight" style="background-image: url(../../../assets/login/images/bg.jpg);">
+	<section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <h3 class="mb-4 text-center">Gimnasio Ronnie Careman</h3>
+                        <form [formGroup]="loginForm" (ngSubmit)="logIn()" class="signin-form">
+                            <div class="form-group">
+                                <input formControlName="email" type="text" class="form-control" placeholder="Email">
+                            </div>
 
-    <div class="contenedor">
-        <div class="tipocuenta">
-            <div>
-                <span>Escoger el tipo de Cuenta</span><br><br>
-                <label class="cuenta" for="Master">Master</label>
-                <input class="radio" type="radio" name="rol_cuenta" id="Master" value="Master">
-                <br>
-                <label class="cuenta" for="Administrador">Administrador</label>
-                <input class="radio" type="radio" name="rol_cuenta" id="Administrador" value="Administrador">
-                <br>
-                <label class="cuenta" for="Instructor">Instructor</label>
-                <input class="radio" type="radio" name="rol_cuenta" id="Instructor" value="Instructor">                
+                            <div class="form-group">
+                                <input formControlName="password" id="password-field" type="password" class="form-control" placeholder="Password">
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3" [disabled]="loginForm.invalid">Sign In</button>
+                            </div>
+                        </form>
+
+                        <p class="w-100 text-center">&mdash; ¿Desdeas realizar un pago? &mdash;</p>
+                        <div class="social d-flex text-center">
+                            <a href="/pagoPlataforma" class="px-2 py-2 mr-md-1 rounded">Realizar pago</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="input-contenedor">
-            <i class="fas fa-user icon"></i>
-            <input formControlName="email" type="email" placeholder="Correo Electrónico" id="user"/><br>
-        </div>
-        
-        <div class="input-contenedor">
-            <i class="fas fa-key icon"></i>
-            <input formControlName="password" type="password" placeholder="Contraseña" id="password"/><br>
-        </div>
-
-        <input routerLink="/master" type="submit" value="Login" class="button">
-        <p>¿Deseas realizar un pago? <a href="/pagoPlataforma" class="link">Realizar Pago</a></p>
-    </div>
-</form>
+		</div>
+	</section>
+</body>
