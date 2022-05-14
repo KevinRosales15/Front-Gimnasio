@@ -24,6 +24,11 @@ import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PaginacionPipe } from './pipes/paginacion.pipe';
+
+
 
 
 @NgModule({
@@ -37,7 +42,8 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
     LoginComponent,
     PagoPlataformaComponent,
     SucursalComponent,
-    ListarSucursalComponent
+    ListarSucursalComponent,
+    PaginacionPipe,
 
   ],
   imports: [
@@ -54,6 +60,8 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
     MatIconModule,
     ToastrModule.forRoot(),
     SocketIoModule,
+    MatTooltipModule,
+    MatPaginatorModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
