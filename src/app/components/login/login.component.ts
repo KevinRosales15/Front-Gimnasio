@@ -3,6 +3,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 import { Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   
-  constructor(private LoginService:LoginService , private fb: FormBuilder, private toastr: ToastrService) { 
+  constructor(private LoginService:LoginService , private fb: FormBuilder, private toastr: ToastrService, public router: Router) { 
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -26,13 +27,19 @@ export class LoginComponent implements OnInit {
 
   logIn() {
     this.logIn$ = this.LoginService.logIn(this.loginForm.value).subscribe(entry => {
-      if (entry.message == 'Contraseña Incorrecta') {
-        this.toastr.warning(entry.message, 'Warning!!');
+      if (entry.rol != null) {
+        this.toastr.success(entry.message, 'Successfull Login!!!');
+        this.router.navigate(['/' + entry.rol]);
+
       } else if (entry.message == 'Email no asociado') {
         this.toastr.warning('El email no se encuentra asociado a una cuenta', 'Warning!!');
+
+      } else if (entry.message == 'Contraseña Incorrecta') {
+        this.toastr.warning(entry.message, 'Warning!!');
+
       } else {
-        this.toastr.success(entry.message, 'Successfull Login!!!');
-      }
+        this.toastr.error("Ha ocurrido un error inesperado", 'Error!');
+      } 
     });
   }
 
