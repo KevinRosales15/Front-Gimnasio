@@ -14,4 +14,8 @@ export class RutinaService {
   getRutinas(): Observable<any> {
     return this.httpClient.get<any>(`${environment.END_POINTS.RUTINAS}/all`);
   }
+
+  deleteRutina(id: string): Observable<any> {
+    return this.httpClient.delete<any>(environment.END_POINTS.RUTINAS,{body:{id}});
+  }
 }
