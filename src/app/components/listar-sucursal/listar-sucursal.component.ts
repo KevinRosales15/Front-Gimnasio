@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SucursalService } from 'src/app/services/sucursal/sucursal.service';
 import { Subscription } from 'rxjs';
 import { sucursal } from 'src/app/models/sucursal';
@@ -10,12 +10,15 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 
 
+
 @Component({
   selector: 'app-listar-sucursal',
   templateUrl: './listar-sucursal.component.html',
   styleUrls: ['./listar-sucursal.component.css']
 })
 export class ListarSucursalComponent implements OnInit {
+
+ 
 
   sucursal$: Subscription;
   listSucursal: sucursal[] = [];
@@ -29,7 +32,8 @@ export class ListarSucursalComponent implements OnInit {
   }
 
   
-  constructor(private sucursalService: SucursalService, private toastr: ToastrService, ) { }
+  constructor(private sucursalService: SucursalService, private toastr: ToastrService) {
+   }
 
 
   ngOnInit(): void {
@@ -40,11 +44,9 @@ export class ListarSucursalComponent implements OnInit {
 
 
   getSucursales(){
-    console.log('method');
     this.sucursal$ = this.sucursalService.getSucursales().subscribe(data =>{
-      console.log('sucursal del front',data);
       this.listSucursal = data.data;
-      console.log('sucursal',this.listSucursal);
+      console.log('sucursales',this.listSucursal);
     });
   }
 
@@ -52,7 +54,7 @@ export class ListarSucursalComponent implements OnInit {
   DialogEliminarSucursal(id: any){
     console.log('id a eliminar',id);
     Swal.fire({
-      title:'Se eliminará la sucursal',
+      title:'Se va a eliminar la sucursal',
       text: 'Esta acción no puede revertirse',
       icon: 'warning',
       iconColor: 'red',
@@ -71,8 +73,53 @@ export class ListarSucursalComponent implements OnInit {
     })
   }
 
+  DialogEditarSucursal(sucursal: any){
+    console.log('Sucursal a editar',sucursal);
+    Swal.fire({
+      html: `
+        <h1 style="text-align: center; display: block; color: #3085d6;">Editar Sucursal</h1><br>
+        <form>
+          <strong style="text-align: left; display: block;"> Número Sucursal </strong><br>
+          <input type="number" id="noSucursal" value="${sucursal.noSucursal}"  class="form-control" disabled ><br>
+          <strong style="text-align: left; display: block;"> Dirección </strong><br>
+          <input type="text"  id="dirreccion"  value="${sucursal.direccion}"   class="form-control"><br>
+          <strong style="text-align: left; display: block;"> Cantidad Clientes </strong><br>
+          <input type="number" id="cantidadClientes"  value="${sucursal.cantidadClientes}"  class="form-control " disabled ><br>
+          <strong style="text-align: left; display: block;"> Cantidad Empleados </strong><br>
+          <input type="number" id="cantidadEmpleados" value="${sucursal.cantidadEmpleados}"  class="form-control" disabled ><br>
+        </form>
+      `,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#858585',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then(result =>{
+      if(result.value){
+        const numSucursal = (<HTMLInputElement>document.getElementById("noSucursal")).value;
+        const direccion = (<HTMLInputElement>document.getElementById("dirreccion")).value;
+        const numClientes = (<HTMLInputElement>document.getElementById("cantidadClientes")).value;
+        const numEmpleados = (<HTMLInputElement>document.getElementById("cantidadEmpleados")).value;
+        const id = sucursal._id;
+        const noSucursal = Number(numSucursal);
+        const cantidadClientes = Number(numClientes);
+        const cantidadEmpleados = Number(numEmpleados);
+        const SucursalUpdate = {id,noSucursal, direccion, cantidadClientes, cantidadEmpleados};
+        console.log("objeto para Update",SucursalUpdate);
+        this.sucursal$ = this.sucursalService.updateSucursal(SucursalUpdate).subscribe(data => {
+          this.toastr.info('La Sucursal fue editada con exíto', 'Sucursal Editada!');
+          this.getSucursales();
+        })
+      }
+    })
+
+  }
+
+  ngOnDestroy(){
+    this.sucursal$.unsubscribe;
+  }
+
 }
 
-  
-  
+
 
