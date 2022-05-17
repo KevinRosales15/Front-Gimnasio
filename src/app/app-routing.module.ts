@@ -10,6 +10,7 @@ import { MasterComponent } from './components/roles/master/master.component';
 import { InstructorComponent } from './components/roles/instructor/instructor.component';
 import { AdminComponent } from './components/roles/admin/admin.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
+import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
 import { DietaComponent } from './components/dieta/dieta.component';
 
@@ -27,6 +28,8 @@ const routes: Routes = [
   { path: 'rutinas', component: RutinaComponent },
   { path: 'dietas', component: DietaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
+  { path: 'lista-empleados', component:ListaEmpleadosComponent },
+  { path: 'editar-empleado', component: RegistroEmpleadosComponent},
   { path: 'nuevarutina', component: NuevarutinaComponent },
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
