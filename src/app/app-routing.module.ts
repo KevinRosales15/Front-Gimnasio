@@ -29,7 +29,6 @@ const routes: Routes = [
   { path: 'dietas', component: DietaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   { path: 'lista-empleados', component:ListaEmpleadosComponent },
-  { path: 'editar-empleado', component: RegistroEmpleadosComponent},
   { path: 'nuevarutina', component: NuevarutinaComponent },
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
