@@ -1,0 +1,37 @@
+.editar {
+    cursor: pointer;
+    margin-left: 10px;
+    color: rgb(5, 122, 218);
+}
+
+
+
+.eliminar {
+    cursor: pointer;
+    margin-left: 10px;
+    color: rgb(218, 5, 5);
+}
+
+
+.ButtonHome button {
+    background: #fff;
+    color: black;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 120px;
+    height: 40px;
+    margin-top: 25px;
+    margin-left: 70px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.ButtonHome button:hover {
+    background: seagreen;
+    color: white;
+}
+
+.ButtonHome i {
+    color: black;
+    padding-right: 8px;
+}

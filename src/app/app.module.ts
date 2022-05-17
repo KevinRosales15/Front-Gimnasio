@@ -27,6 +27,7 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PaginacionPipe } from './pipes/paginacion.pipe';
+import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
 
 
 
@@ -44,6 +45,7 @@ import { PaginacionPipe } from './pipes/paginacion.pipe';
     SucursalComponent,
     ListarSucursalComponent,
     PaginacionPipe,
+    ListaEmpleadosComponent,
 
   ],
   imports: [

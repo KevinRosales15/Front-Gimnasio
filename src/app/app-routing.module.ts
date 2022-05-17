@@ -10,6 +10,7 @@ import { MasterComponent } from './components/roles/master/master.component';
 import { InstructorComponent } from './components/roles/instructor/instructor.component';
 import { AdminComponent } from './components/roles/admin/admin.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
+import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,8 @@ const routes: Routes = [
   { path: 'editar-sucursal', component: SucursalComponent },
   { path: 'rutinas', component: RutinaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
+  { path: 'lista-empleados', component:ListaEmpleadosComponent },
+  { path: 'editar-empleado', component: RegistroEmpleadosComponent}
 ];
 
 @NgModule({

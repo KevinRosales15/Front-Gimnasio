@@ -1,0 +1,53 @@
+<body>
+    <div class ="ButtonHome">
+      <button  routerLink="/master"><i class="fa-solid fa-angles-left"></i>Volver</button>
+    </div>
+      <div class="container mt-5">
+          <div class="row">
+              <div class="col-lg-12 offset-lg-0">
+                  <div class="card">
+                      <div class="card-body text-center">
+                          <span class="tituloempleado">LISTADO DE EMPLEADOS</span>
+                          <button class="btn btn-success float-end" routerLink="/RegistroEmpleado">CREAR</button>
+                          <table *ngIf="listaempleado.length>0 " class="table table-striped mt-3">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Nombre Completo</th>
+                                  <th scope="col">DPI</th>
+                                  <th scope="col">Fecha de Nacimiento</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Telefono</th>
+                                  <th scope="col">Numero de Sucursal</th>
+                                  <th scope="col">Puesto_Rol</th>
+                                  <th scope="col"></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let empleado of listaempleado | paginacion: page_size:page_number">
+                                  <td>{{empleado.nombreCompleto}}</td>
+                                  <td>{{empleado.dpi}}</td>
+                                  <td>{{empleado.fechaNacimiento}}</td>
+                                  <td>{{empleado.email}}</td>
+                                  <td>{{empleado.telefono}}</td>
+                                  <td>{{empleado.noSucursal}}</td>
+                                  <td>{{empleado.puesto_rol}}</td>
+                                  <td>
+                                      <i  (click)="DialogEditarempleado(empleado)"  class="editar fa-solid fa-pen-to-square" matTooltip="Editar Empleado" matTooltipPosition="left" matTooltipClass="TooltipEditar" ></i>
+                                      <i (click)="DialogEliminarEmpleados(empleado._id)"  class="eliminar fa-solid fa-delete-left" matTooltip="Eliminar Empleado" matTooltipPosition="right" matTooltipClass="TooltipEliminar" ></i>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <mat-paginator 
+                            [length]="listaempleado.length"
+                            [pageSize]="page_size"
+                            [pageSizeOptions]="pageSizeOptions"
+                            (page)="handlePage($event)">
+                            </mat-paginator>
+                            <h3 *ngIf="listaempleado.length == 0 " style="text-align: center; margin-top: 20px;">No hay Empleados para mostrar</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </body>
