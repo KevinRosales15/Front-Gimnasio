@@ -18,4 +18,8 @@ export class RutinaService {
   deleteRutina(id: string): Observable<any> {
     return this.httpClient.delete<any>(environment.END_POINTS.RUTINAS,{body:{id}});
   }
+
+  createRutina(rutina: any): Observable<any> {
+    return this.httpClient.put<any>(environment.END_POINTS.RUTINAS,rutina);
+  }
 }

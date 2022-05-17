@@ -28,6 +28,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PaginacionPipe } from './pipes/paginacion.pipe';
 import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
+import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
 
 
 
@@ -46,6 +47,7 @@ import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
     ListarSucursalComponent,
     PaginacionPipe,
     PaginacionRutinasPipe,
+    NuevarutinaComponent,
 
   ],
   imports: [
