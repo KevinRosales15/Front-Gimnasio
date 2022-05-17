@@ -30,7 +30,7 @@
                   <td>{{rutina.ejercicios}}</td>
                   <td>
                     <i (click)="VerRutina(rutina._id, rutina.nivel, rutina.dia, rutina.musculo, rutina.ejercicios)"  class="ver fa-solid fa-eye" matTooltip="Ver Rutina" matTooltipPosition="left" matTooltipClass="TooltipVer"></i>
-                    <i  [routerLink]="['/editar-rutina']"  class="editar fa-solid fa-pen-to-square" matTooltip="Editar Rutina" matTooltipPosition="right" matTooltipClass="TooltipEditar" ></i>
+                    <i (click)="DialogEditarRutina(rutina)"  class="editar fa-solid fa-pen-to-square" matTooltip="Editar Rutina" matTooltipPosition="left" matTooltipClass="TooltipEditar" ></i>
                     <i (click)="DialogEliminarRutina(rutina._id)"  class="eliminar fa-solid fa-delete-left" matTooltip="Eliminar Rutina" matTooltipPosition="left" matTooltipClass="TooltipEliminar" ></i>
                   </td>
                 </tr>

@@ -70,6 +70,54 @@ export class RutinaComponent implements OnInit {
     });
   }
 
+  DialogEditarRutina(rutina: any){
+    console.log('Rutina a editar', rutina);
+    Swal.fire({
+      html: `
+        <h1 style="text-align: center; display: block; color: #3085d6;">Editar Rutina</h1><br>
+        <form>
+          <strong style="text-align: left; display: block;"> ID rutina </strong><br>
+          <input type="number" id="id_rutina" value="${rutina.id_rutina}"  class="form-control" disabled ><br>
+          <strong style="text-align: left; display: block;"> ID objetivo </strong><br>
+          <input type="number"  id="id_objetivo"  value="${rutina.id_objetivo}"   class="form-control"><br>
+          <strong style="text-align: left; display: block;"> Nivel </strong><br>
+          <input type="number" id="nivel"  value="${rutina.nivel}"  class="form-control " ><br>
+          <strong style="text-align: left; display: block;"> Día </strong><br>
+          <input type="text" id="dia" value="${rutina.dia}"  class="form-control" ><br>
+          <strong style="text-align: left; display: block;"> Músculo </strong><br>
+          <input type="text"  id="musculo"  value="${rutina.musculo}"   class="form-control"><br>
+          <strong style="text-align: left; display: block;"> Ejercicios </strong><br>
+          <input type="text"  id="ejercicios"  value="${rutina.ejercicios}"   class="form-control"><br>
+        </form>
+      `,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#858585',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then(result =>{
+      if(result.value){
+        const id_rutina = (<HTMLInputElement>document.getElementById("id_rutina")).value;
+        const id_objetivo = (<HTMLInputElement>document.getElementById("id_objetivo")).value;
+        const nivelRutina = (<HTMLInputElement>document.getElementById("nivel")).value;
+        const dia = (<HTMLInputElement>document.getElementById('dia')).value;
+        const musculo = (<HTMLInputElement>document.getElementById('musculo')).value;
+        const ejercicios = (<HTMLInputElement>document.getElementById("ejercicios")).value;
+        const id = rutina._id;
+        const idRutina = Number(id_rutina);
+        const idObjetivo = Number(id_objetivo);
+        const nivel = Number(nivelRutina);
+        const RutinaUpdate = {id,idRutina, idObjetivo, nivel, dia, musculo, ejercicios};
+        console.log("objeto para Update",RutinaUpdate);
+        this.rutina$ = this.rutinaService.updateRutina(RutinaUpdate).subscribe(data => {
+          this.toastr.info('La rutina fue editada con exíto', 'Rutina Editada!');
+          this.getRutinas();
+        })
+      }
+    })
+
+  }
+
   ngOnDestroy(): void {
     this.rutina$.unsubscribe();
   }

@@ -11,6 +11,10 @@ export class RutinaService {
 
   constructor(public httpClient: HttpClient) { }
 
+  getRutina(id: any): Observable<any> {
+    return this.httpClient.get<any>(environment.END_POINTS.SUCURSAL,{params:{id}});
+  }
+
   getRutinas(): Observable<any> {
     return this.httpClient.get<any>(`${environment.END_POINTS.RUTINAS}/all`);
   }
@@ -21,5 +25,9 @@ export class RutinaService {
 
   createRutina(rutina: any): Observable<any> {
     return this.httpClient.put<any>(environment.END_POINTS.RUTINAS,rutina);
+  }
+
+  updateRutina(rutina: any): Observable<any> {
+    return this.httpClient.post<any>(environment.END_POINTS.RUTINAS,rutina);
   }
 }
