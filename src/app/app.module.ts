@@ -29,6 +29,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { PaginacionPipe } from './pipes/paginacion.pipe';
 import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
+import { DietaComponent } from './components/dieta/dieta.component';
 
 
 
@@ -48,6 +49,7 @@ import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nueva
     PaginacionPipe,
     PaginacionRutinasPipe,
     NuevarutinaComponent,
+    DietaComponent,
 
   ],
   imports: [

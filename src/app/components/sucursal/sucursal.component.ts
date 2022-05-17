@@ -30,6 +30,7 @@ export class SucursalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
   agregarSucursal() {
@@ -46,6 +47,7 @@ export class SucursalComponent implements OnInit {
       this.router.navigate(['/listar-sucursal']);
     })
   }
+  
   
 
 

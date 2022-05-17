@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { invalid } from '@angular/compiler/src/render3/view/util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pago-plataforma',
@@ -18,7 +19,7 @@ export class PagoPlataformaComponent implements OnInit {
   mensualidad: number = 0;
   montoTotal: number = 0;
 
-  constructor(private PagoPlataformaService: PagoPlataformaService, private fb: FormBuilder, private toastr: ToastrService) { 
+  constructor(private PagoPlataformaService: PagoPlataformaService, private fb: FormBuilder, private toastr: ToastrService, public router: Router) { 
     this.cardForm = this.fb.group({
       cardHolder: ['', Validators.required],
       cardNumber: ['', Validators.required],
@@ -36,6 +37,18 @@ export class PagoPlataformaComponent implements OnInit {
   verifyEmail$: Subscription;
 
   ngOnInit(): void {
+    this.loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js");
+    this.loadScript("../../../assets/pago_plataforma/js/pago_plataforma.js");
+  }
+
+  public loadScript(url: string) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = url;
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
   }
 
   verificarEmail() {
@@ -78,12 +91,8 @@ export class PagoPlataformaComponent implements OnInit {
       this.toastr.info('Invalid Email!','Verify Information!');
     } else {
       this.toastr.success('Successfull Payment!','Su pago se ha realizado con éxito!!!');
+      this.router.navigate(['/login']);
     }
-  }
-
-  ngOnDestroy(){
-    this.verifyNumber$.unsubscribe;
-    this.verifyEmail$.unsubscribe;
   }
 
 }

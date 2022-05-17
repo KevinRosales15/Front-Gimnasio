@@ -8,19 +8,24 @@ import { RutinaComponent } from './components/rutina/rutina/rutina.component';
 import { LoginComponent } from './components/login/login.component';
 import { MasterComponent } from './components/roles/master/master.component';
 import { InstructorComponent } from './components/roles/instructor/instructor.component';
+import { AdminComponent } from './components/roles/admin/admin.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
+import { DietaComponent } from './components/dieta/dieta.component';
 
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'RegistroEmpleado', component: RegistroEmpleadosComponent },
   { path: 'master', component: MasterComponent },
   { path: 'instructor', component: InstructorComponent },
+  { path: 'admin', component: AdminComponent },
   { path: 'listar-sucursal', component: ListarSucursalComponent },
   { path: 'crear-sucursal', component: SucursalComponent },
   { path: 'editar-sucursal', component: SucursalComponent },
   { path: 'rutinas', component: RutinaComponent },
+  { path: 'dietas', component: DietaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   { path: 'nuevarutina', component: NuevarutinaComponent },
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
