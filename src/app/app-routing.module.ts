@@ -11,6 +11,8 @@ import { InstructorComponent } from './components/roles/instructor/instructor.co
 import { AdminComponent } from './components/roles/admin/admin.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
 import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
+import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
+import { DietaComponent } from './components/dieta/dieta.component';
 
 
 const routes: Routes = [
@@ -24,9 +26,12 @@ const routes: Routes = [
   { path: 'crear-sucursal', component: SucursalComponent },
   { path: 'editar-sucursal', component: SucursalComponent },
   { path: 'rutinas', component: RutinaComponent },
+  { path: 'dietas', component: DietaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   { path: 'lista-empleados', component:ListaEmpleadosComponent },
-  { path: 'editar-empleado', component: RegistroEmpleadosComponent}
+  { path: 'editar-empleado', component: RegistroEmpleadosComponent},
+  { path: 'nuevarutina', component: NuevarutinaComponent },
+  //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -37,6 +37,18 @@ export class PagoPlataformaComponent implements OnInit {
   verifyEmail$: Subscription;
 
   ngOnInit(): void {
+    this.loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js");
+    this.loadScript("../../../assets/pago_plataforma/js/pago_plataforma.js");
+  }
+
+  public loadScript(url: string) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = url;
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
   }
 
   verificarEmail() {
@@ -81,11 +93,6 @@ export class PagoPlataformaComponent implements OnInit {
       this.toastr.success('Successfull Payment!','Su pago se ha realizado con éxito!!!');
       this.router.navigate(['/login']);
     }
-  }
-
-  ngOnDestroy(){
-    this.verifyNumber$.unsubscribe;
-    this.verifyEmail$.unsubscribe;
   }
 
 }

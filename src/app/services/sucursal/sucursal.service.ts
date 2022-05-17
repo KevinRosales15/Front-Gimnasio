@@ -18,7 +18,7 @@ export class SucursalService {
   }
 
   getSucursal(id: string): Observable<any> {
-    return this.httpClient.get<any>(environment.END_POINTS.SUCURSAL);
+    return this.httpClient.get<any>(environment.END_POINTS.SUCURSAL,{params:{id}});
   }
 
   deleteSucursal(id: string): Observable<any> {
@@ -29,9 +29,8 @@ export class SucursalService {
     return this.httpClient.put<any>(environment.END_POINTS.SUCURSAL,sucursal);
   }
 
-  updateSucursal(id: string, data: any): Observable<any> {
-    console.log('id:',id,'data:', data);
-    return this.httpClient.post<any>(environment.END_POINTS.SUCURSAL, {id,data});
+  updateSucursal(sucursal: any): Observable<any> {
+    return this.httpClient.post<any>(environment.END_POINTS.SUCURSAL,sucursal);
   }
 
 

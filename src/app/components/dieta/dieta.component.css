@@ -1,0 +1,117 @@
+table {
+    width: 80%;
+    position: center;
+  
+  }
+  
+  #add {
+    position: relative;
+    color: #fff;
+    text-align: right;
+    left: -200px;
+    right: 1660px;
+  }
+  
+  .tittle {
+  
+    max-width: 70px;
+    min-width: 60px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  
+  }
+  
+  .tittlec {
+    max-width: 80px;
+    min-width: 60px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .titllepr {
+    text-align: center;
+    max-width: 60px;
+    min-width: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .tittlep {
+    text-align: center;
+    max-width: 80px;
+    min-width: 60px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  
+  }
+  
+  .tim {
+  
+    max-width: 80px;
+    min-width: 80px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  
+  .dieta-buttons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .ellipsis {
+    max-width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  .oneitt {
+    text-align: center;
+  }
+  
+  .alim {
+    max-width: 250px;
+    min-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  
+  }
+  
+  .acciones {
+    text-align: center;
+  }
+  
+  .ButtonHome button {
+    background: #fff;
+    color: black;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 120px;
+    height: 40px;
+    margin-top: 25px;
+    margin-left: 65px;
+    cursor: pointer;
+    border: 2px solid black;
+  }
+  
+  .ButtonHome button:hover {
+    background: rgb(8, 70, 240);
+    color: white;
+  }
+  
+  .ButtonHome i {
+    color: black;
+    padding-right: 8px;
+  }
+  
+  .tabla {
+    position: center;
+  }

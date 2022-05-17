@@ -20,13 +20,13 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr *ngFor="let sucursal of listSucursal | paginacion: page_size:page_number">
+                              <tr *ngFor="let sucursal of listSucursal | paginacion: page_size: page_number">
                                 <td>{{sucursal.noSucursal}}</td>
                                 <td>{{sucursal.direccion}}</td>
                                 <td>{{sucursal.cantidadClientes}}</td>
                                 <td>{{sucursal.cantidadEmpleados}}</td>
                                 <td>
-                                    <i  [routerLink]="['/editar-sucursal']"  class="editar fa-solid fa-pen-to-square" matTooltip="Editar Sucursal" matTooltipPosition="left" matTooltipClass="TooltipEditar" ></i>
+                                    <i (click)="DialogEditarSucursal(sucursal)"  class="editar fa-solid fa-pen-to-square" matTooltip="Editar Sucursal" matTooltipPosition="left" matTooltipClass="TooltipEditar" ></i>
                                     <i (click)="DialogEliminarSucursal(sucursal._id)"  class="eliminar fa-solid fa-delete-left" matTooltip="Eliminar Sucursal" matTooltipPosition="right" matTooltipClass="TooltipEliminar" ></i>
                                 </td>
                               </tr>
