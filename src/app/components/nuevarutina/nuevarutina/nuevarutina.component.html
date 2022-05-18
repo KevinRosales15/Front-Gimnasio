@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+          <div class="card">
+              <div class="card-body text-center">
+                  <span class="titulo"> {{titulo | uppercase }}</span>
+                  <form class="mt-3" [formGroup]="rutinaForm" (ngSubmit)="agregarRutina()">
+                      <div class="mb-3">
+                          <input type="number" formControlName="id_rutina" class="form-control form-control-lg"
+                              placeholder="ID rutina">
+                          <div class="text-danger"*ngIf="rutinaForm.get('id_rutina')?.hasError('required') && rutinaForm.get('id_rutina')?.touched">
+                              <span>El ID de rutina <strong>es obligatorio</strong></span>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <input type="number" formControlName="id_objetivo" class="form-control form-control-lg"
+                              placeholder="ID objetivo">
+                          <div class="text-danger"*ngIf="rutinaForm.get('id_objetivo')?.hasError('required') && rutinaForm.get('id_objetivo')?.touched">
+                              <span>El ID de objetivo <strong>es obligatorio</strong></span>
+                          </div>   
+                      </div>
+                      <div class="mb-3">
+                          <input type="number" formControlName="nivel" class="form-control form-control-lg"
+                              placeholder="Nivel de rutina">
+                          <div class="text-danger"*ngIf="rutinaForm.get('nivel')?.hasError('required') && rutinaForm.get('nivel')?.touched">
+                              <span>El nivel de rutina <strong>es obligatorio</strong></span>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <input type="text" formControlName="dia" class="form-control form-control-lg"
+                              placeholder="Día">
+                          <div class="text-danger"*ngIf="rutinaForm.get('dia')?.hasError('required') && rutinaForm.get('dia')?.touched">
+                              <span>El día <strong>es obligatorio</strong></span>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                        <input type="text" formControlName="musculo" class="form-control form-control-lg"
+                            placeholder="Músculo">
+                        <div class="text-danger"*ngIf="rutinaForm.get('musculo')?.hasError('required') && rutinaForm.get('musculo')?.touched">
+                            <span>El músculo <strong>es obligatorio</strong></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" formControlName="ejercicios" class="form-control form-control-lg"
+                            placeholder="Ejercicios">
+                        <div class="text-danger"*ngIf="rutinaForm.get('ejercicios')?.hasError('required') && rutinaForm.get('ejercicios')?.touched">
+                            <span>Los ejercicios <strong>son obligatorios</strong></span>
+                        </div>
+                    </div>
+                      <div class="mb-3">
+                          <button routerLink="/rutinas" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                          <button type="submit" [disabled]="rutinaForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

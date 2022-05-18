@@ -13,7 +13,10 @@ body{
     font-size: xx-large;
     font-family: 'Roboto Condensed', sans-serif;
 }
-
+.tituloempleado{
+    font-size: xx-large;
+    font-family: 'Roboto Condensed', sans-serif;
+}
 .TooltipEditar {
     background: rgba(5, 122, 218, 0.815);
 }

@@ -28,6 +28,9 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PaginacionPipe } from './pipes/paginacion.pipe';
+import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
+import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
+import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
 import { DietaComponent } from './components/dieta/dieta.component';
 import {MatSelectModule} from '@angular/material/select';
 
@@ -46,6 +49,9 @@ import {MatSelectModule} from '@angular/material/select';
     SucursalComponent,
     ListarSucursalComponent,
     PaginacionPipe,
+    ListaEmpleadosComponent,
+    PaginacionRutinasPipe,
+    NuevarutinaComponent,
     DietaComponent,
     RegistroClientesComponent
   ],
