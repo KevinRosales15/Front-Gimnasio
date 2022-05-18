@@ -11,6 +11,10 @@ export class LoginService {
 
   constructor(public httpClient:HttpClient) { }
 
+  verifyMora(date:any): Observable<any> {
+    return this.httpClient.get<any>(environment.END_POINTS.LOGIN, { params: date });
+  }
+
   logIn(credentials:any): Observable<any> {
     return this.httpClient.post<any>(environment.END_POINTS.LOGIN, {}, { params: credentials });
   }
