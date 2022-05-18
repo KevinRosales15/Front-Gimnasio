@@ -20,6 +20,7 @@ import { InstructorComponent } from './components/roles/instructor/instructor.co
 import { MasterComponent } from './components/roles/master/master.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
+import { RegistroClientesComponent } from './components/registro-clientes/registro-clientes.component';
 import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -28,7 +29,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PaginacionPipe } from './pipes/paginacion.pipe';
 import { DietaComponent } from './components/dieta/dieta.component';
-
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -46,7 +47,7 @@ import { DietaComponent } from './components/dieta/dieta.component';
     ListarSucursalComponent,
     PaginacionPipe,
     DietaComponent,
-
+    RegistroClientesComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +65,7 @@ import { DietaComponent } from './components/dieta/dieta.component';
     SocketIoModule,
     MatTooltipModule,
     MatPaginatorModule,
+    MatSelectModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

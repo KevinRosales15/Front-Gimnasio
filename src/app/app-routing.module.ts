@@ -11,6 +11,7 @@ import { InstructorComponent } from './components/roles/instructor/instructor.co
 import { AdminComponent } from './components/roles/admin/admin.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
 import { DietaComponent } from './components/dieta/dieta.component';
+import { RegistroClientesComponent } from './components/registro-clientes/registro-clientes.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'rutinas', component: RutinaComponent },
   { path: 'dietas', component: DietaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
+  { path: 'CrearClientes', component: RegistroClientesComponent}
 ];
 
 @NgModule({
