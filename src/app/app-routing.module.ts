@@ -29,10 +29,18 @@ const routes: Routes = [
   { path: 'rutinas', component: RutinaComponent },
   { path: 'dietas', component: DietaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
+<<<<<<< HEAD
   { path: 'lista-empleados', component:ListaEmpleadosComponent },
   { path: 'nuevarutina', component: NuevarutinaComponent },
   { path: 'CrearClientes', component: RegistroClientesComponent }
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
+=======
+  { path: 'dietas', component: DietaComponent },
+  { path: 'crear_dieta', component: CreardietaComponent },
+  { path: 'editar_dieta/:id', component: EditardietaComponent },
+
+
+>>>>>>> featuredietas
 ];
 
 @NgModule({
