@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  currentDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');;
   
   constructor(private LoginService:LoginService , private fb: FormBuilder, private toastr: ToastrService, public router: Router) { 
     this.loginForm = this.fb.group({
@@ -21,8 +23,15 @@ export class LoginComponent implements OnInit {
   }
 
   logIn$: Subscription;
+  verifyMora$: Subscription;
 
   ngOnInit(): void {
+    this.verifyMora();
+  }
+
+
+  verifyMora(){
+    this.verifyMora$ = this.LoginService.verifyMora({date: this.currentDate}).subscribe(entry => {});
   }
 
   logIn() {
@@ -45,6 +54,7 @@ export class LoginComponent implements OnInit {
 
   ngOnDestroy(){
     this.logIn$.unsubscribe;
+    this.verifyMora$.unsubscribe;
   }
 
 }

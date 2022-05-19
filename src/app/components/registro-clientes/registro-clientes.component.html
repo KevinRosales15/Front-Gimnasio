@@ -1,0 +1,66 @@
+<div class ="ButtonHome">
+  <button  routerLink="/master"><i class="fa-solid fa-angles-left"></i>Volver</button>
+</div>
+<div class="row center-xs">
+    <mat-card class="example-card col-xs-6">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Ronnie Coleman</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://us.123rf.com/450wm/john79/john791702/john79170200044/71544543-gimnasio-y-dise%C3%B1o-de-fitness-un-hombre-con-una-mancuerna-en-la-mano.jpg">
+
+        <mat-card-content>
+            <form [formGroup]="datosClienteForm" (ngSubmit)="putDatos()" class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label for="nombreCompleto">Nombre Completo: </mat-label>
+                    <input matInput id="nombreCompleto" type="text" formControlName="nombreCompleto">
+                </mat-form-field>
+                <br>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label for="fechaNacimiento">Fecha Nacimiento: </mat-label>
+                  <input matInput id="fechaNacimiento" type="date" formControlName="fechaNacimiento">
+                </mat-form-field>
+                <br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label for="dpi">DPI: </mat-label>
+                <input matInput id="dpi" type="number" formControlName="dpi" maxlength="13" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+              </mat-form-field>
+              <br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label for="email">Email: </mat-label>
+                <input matInput id="email" type="email" formControlName="email">
+              </mat-form-field>
+              <br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label for="telefono">Teléfono: </mat-label>
+                <input matInput id="telefono" type="number" formControlName="telefono" maxlength="8" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+              </mat-form-field>
+              <br>
+
+              <mat-form-field class="example-full-width" aspecto = "fill" > 
+                <mat-label> Sucursal </mat-label> 
+                  <mat-select formControlName="sucursal"> 
+                    <mat-option for = "sucursal" value="1"> Zona 10 </mat-option>
+                    <mat-option for = "sucursal" value="2"> Zona 15 </mat-option> 
+                    <mat-option for = "sucursal" value="3"> Miraflores </mat-option>
+                  </mat-select> 
+              </mat-form-field> 
+              <br>
+
+              <mat-form-field class="example-full-width" aspecto = "fill" > 
+                <mat-label> Objetivo </mat-label> 
+                  <mat-select formControlName="objetivo"> 
+                    <mat-option for = "objetivo" value="1"> Masa muscular </mat-option>
+                    <mat-option for = "objetivo" value="2"> Bajar de peso </mat-option> 
+                    <mat-option for = "objetivo" value="3"> Subir volumen </mat-option>
+                  </mat-select> 
+              </mat-form-field> 
+              <br>
+              
+              <button mat-raised-button color="primary" type="submit">Sign Up</button>
+            </form>
+        </mat-card-content>

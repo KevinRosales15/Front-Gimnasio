@@ -7,15 +7,12 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class RegistroClientesService {
 
   constructor(public httpClient:HttpClient) { }
 
-  verifyMora(date:any): Observable<any> {
-    return this.httpClient.get<any>(environment.END_POINTS.LOGIN, { params: date });
-  }
-
-  logIn(credentials:any): Observable<any> {
-    return this.httpClient.post<any>(environment.END_POINTS.LOGIN, {}, { params: credentials });
+  putDatos(data:any): Observable<any> {
+    console.log('data',data);
+    return this.httpClient.put<any>(environment.END_POINTS.REGISTRO_CLIENTES, {}, { params: data });
   }
 }
