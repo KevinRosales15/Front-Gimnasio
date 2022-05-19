@@ -1,88 +1,89 @@
-
 <body>
-
-    <div class="contenedor">
-        <h1 class="tituloInicial">
-            <i class="fa-solid fa-toolbox icon"></i>  Master
-        </h1>
-
-        <div class="Contenedor-botones">
-
-            <button class="botonPrincipal">
-                <li class="enlace" id="Sucursales">
-                    <a routerLink="/listar-sucursal" class="padre">
-                        <i class="fa-regular fa-building"></i> Sucursales
-                    </a>
-                    <div class="submenu">
-                        <a href="#">Ver Todos</a>
-                        <a href="#">Agregar</a>
-                        <a href="#">Eliminar</a>
-                    </div>
-                </li>
-            </button><br><br>
-
-            <button class="botonPrincipal">
-                <li class="enlace" id="Empleados">
-                    <a href="#Empleados" class="padre">
-                        <i class="fa-solid fa-user-group"></i>Empleados
-                    </a>
-                    <div class="submenu">
-                        <a href="#">Ver Todos</a>
-                        <a href="#">Agregar</a>
-                        <a href="#">Eliminar</a>
-                    </div>
-                </li>
-            </button><br><br>
-
-            <button class="botonPrincipal">
-                <li class="enlace" id="Clientes">
-                    <a routerLink="/CrearClientes" class="padre">
-                        <i class="fa-solid fa-people-robbery"></i>Clientes
-                    </a>
-                    <div class="submenu">
-                        <a href="#">Ver Todos</a>
-                        <a href="#">Agregar</a>
-                        <a href="#">Eliminar</a>
-                    </div>
-                </li>
-            </button><br><br>
-
-            <button class="botonPrincipal">
-                <li class="enlace" id="Rutinas">
-                    <a routerLink="/rutinas" class="padre">
-                        <i class="fa-solid fa-person-walking"></i>Rutinas
-                    </a>
-                    <div class="submenu">
-                        <a href="#">Ver Todos</a>
-                        <a href="#">Agregar</a>
-                        <a href="#">Eliminar</a>
-                    </div>
-                </li>
-            </button><br><br>
-
-            <button class="botonPrincipal">
-                <li class="enlace" id="Dietas">
-                    <a href="#Dietas" class="padre">
-                        <i class="fa-solid fa-calendar-day"></i>Dietas
-                    </a>
-                    <div class="submenu">
-                        <a href="#">Ver Todos</a>
-                        <a href="#">Agregar</a>
-                        <a href="#">Eliminar</a>
-                    </div>
-                </li>
-            </button><br><br>
-
-            <button class="botonSalir">
-                <li class="enlace" id="salir">
-                    <a routerLink="/login" class="padre">
-                        <i class="fa-solid fa-right-from-bracket"></i>Salir Sesión
-                    </a>
-                </li>
-            </button><br><br>
-        
+    <div class="general">
+        <div class="contenedor">
+            <h1 class="tituloInicial">
+                <i class="fa-solid fa-toolbox icon"></i>  Master
+            </h1>
+            
+    
+            <div class="Contenedor-botones">
+    
+                <button routerLink="/listar-sucursal" class="botonPrincipal">
+                    <li class="enlace" id="Sucursales">
+                        <a  class="padre">
+                            <i class="fa-regular fa-building"></i> Sucursales
+                        </a>
+                        <div class="submenu">
+                            <a href="#">Ver Todos</a>
+                            <a href="#">Agregar</a>
+                            <a href="#">Eliminar</a>
+                        </div>
+                    </li>
+                </button><br><br>
+    
+                <button routerLink="/lista-empleados" class="botonPrincipal">
+                    <li class="enlace" id="Empleados">
+                        <a  class="padre">
+                            <i class="fa-solid fa-user-group"></i>Empleados
+                        </a>
+                        <div class="submenu">
+                            <a href="#">Ver Todos</a>
+                            <a href="#">Agregar</a>
+                            <a href="#">Eliminar</a>
+                        </div>
+                    </li>
+                </button><br><br>
+    
+                <button routerLink="/CrearClientes" class="botonPrincipal">
+                    <li class="enlace" id="Clientes">
+                        <a  class="padre">
+                            <i class="fa-solid fa-people-robbery"></i>Clientes
+                        </a>
+                        <div class="submenu">
+                            <a href="#">Ver Todos</a>
+                            <a href="#">Agregar</a>
+                            <a href="#">Eliminar</a>
+                        </div>
+                    </li>
+                </button><br><br>
+    
+                <button routerLink="/rutinas" class="botonPrincipal">
+                    <li class="enlace" id="Rutinas">
+                        <a  class="padre">
+                            <i class="fa-solid fa-person-walking"></i>Rutinas
+                        </a>
+                        <div class="submenu">
+                            <a href="#">Ver Todos</a>
+                            <a href="#">Agregar</a>
+                            <a href="#">Eliminar</a>
+                        </div>
+                    </li>
+                </button><br><br>
+    
+                <button routerLink="/dietas" class="botonPrincipal">
+                    <li class="enlace" id="Dietas">
+                        <a  class="padre">
+                            <i class="fa-solid fa-calendar-day"></i>Dietas
+                        </a>
+                        <div class="submenu">
+                            <a href="#">Ver Todos</a>
+                            <a href="#">Agregar</a>
+                            <a href="#">Eliminar</a>
+                        </div>
+                    </li>
+                </button><br><br>
+    
+                <button routerLink="/login" class="botonSalir">
+                    <li class="enlace" id="salir">
+                        <a  class="padre">
+                            <i class="fa-solid fa-right-from-bracket"></i>Salir Sesión
+                        </a>
+                    </li>
+                </button><br><br>
+            
+            </div>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/5996916878.js" crossorigin="anonymous"></script>
-
-</body>
+        <script src="https://kit.fontawesome.com/5996916878.js" crossorigin="anonymous"></script>
+    
+    </body>

@@ -18,4 +18,8 @@ export class PagoPlataformaService {
   verifyEmail(email:any): Observable<any> {
     return this.httpClient.get<any>(environment.END_POINTS.VERIFYEMAIL, { params: { email } });
   }
+  
+  realizarPago(email:any): Observable<any> {
+    return this.httpClient.put<any>(environment.END_POINTS.PAGOPLATAFORMA, {}, { params: { email } });
+  }
 }

@@ -35,6 +35,7 @@ export class PagoPlataformaComponent implements OnInit {
 
   verifyNumber$: Subscription;
   verifyEmail$: Subscription;
+  realizarPago$: Subscription;
 
   ngOnInit(): void {
     this.loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js");
@@ -90,8 +91,15 @@ export class PagoPlataformaComponent implements OnInit {
     } else if (!this.validEmail) {
       this.toastr.info('Invalid Email!','Verify Information!');
     } else {
-      this.toastr.success('Successfull Payment!','Su pago se ha realizado con éxito!!!');
-      this.router.navigate(['/login']);
+      this.realizarPago$ = this.PagoPlataformaService.realizarPago(this.cardForm.value.email).subscribe(entry => {
+        if (entry.result == 'success') {
+          this.toastr.success('Successfull Payment!','Su pago se ha realizado con éxito!!!');
+          this.router.navigate(['/login']);    
+        } else {
+          this.toastr.warning('Por favor, intente denuevo','Ha ocurrido un error inesperado!!');
+        }
+      }); 
+      
     }
   }
 

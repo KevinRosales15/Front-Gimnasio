@@ -22,6 +22,7 @@ export class NuevarutinaComponent implements OnInit {
     this.rutinaForm = this.fb.group({
       id_rutina: ['', Validators.required],
       id_objetivo: ['', Validators.required],
+      id_dieta: ['', Validators.required],
       nivel: ['', Validators.required],
       dia: ['', Validators.required],
       musculo: ['', Validators.required],
@@ -38,6 +39,7 @@ export class NuevarutinaComponent implements OnInit {
       _id: this.id,
       id_rutina: this.rutinaForm.get('id_rutina')?.value,
       id_objetivo: this.rutinaForm.get('id_objetivo')?.value,
+      id_dieta: this.rutinaForm.get('id_dieta')?.value,
       nivel: this.rutinaForm.get('nivel')?.value,
       dia: this.rutinaForm.get('dia')?.value,
       musculo: this.rutinaForm.get('musculo')?.value,
