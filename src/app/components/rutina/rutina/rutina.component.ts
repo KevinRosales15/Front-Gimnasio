@@ -80,6 +80,8 @@ export class RutinaComponent implements OnInit {
           <input type="number" id="id_rutina" value="${rutina.id_rutina}"  class="form-control" disabled ><br>
           <strong style="text-align: left; display: block;"> ID objetivo </strong><br>
           <input type="number"  id="id_objetivo"  value="${rutina.id_objetivo}"   class="form-control"><br>
+          <strong style="text-align: left; display: block;"> ID dieta </strong><br>
+          <input type="text"  id="id_dieta"  value="${rutina.id_dieta}"   class="form-control"><br>
           <strong style="text-align: left; display: block;"> Nivel </strong><br>
           <input type="number" id="nivel"  value="${rutina.nivel}"  class="form-control " ><br>
           <strong style="text-align: left; display: block;"> Día </strong><br>
@@ -99,6 +101,7 @@ export class RutinaComponent implements OnInit {
       if(result.value){
         const id_rutina = (<HTMLInputElement>document.getElementById("id_rutina")).value;
         const id_objetivo = (<HTMLInputElement>document.getElementById("id_objetivo")).value;
+        const id_dieta = (<HTMLInputElement>document.getElementById('id_dieta')).value;
         const nivelRutina = (<HTMLInputElement>document.getElementById("nivel")).value;
         const dia = (<HTMLInputElement>document.getElementById('dia')).value;
         const musculo = (<HTMLInputElement>document.getElementById('musculo')).value;
@@ -107,7 +110,7 @@ export class RutinaComponent implements OnInit {
         const idRutina = Number(id_rutina);
         const idObjetivo = Number(id_objetivo);
         const nivel = Number(nivelRutina);
-        const RutinaUpdate = {id,idRutina, idObjetivo, nivel, dia, musculo, ejercicios};
+        const RutinaUpdate = {id,idRutina, idObjetivo, id_dieta, nivel, dia, musculo, ejercicios};
         console.log("objeto para Update",RutinaUpdate);
         this.rutina$ = this.rutinaService.updateRutina(RutinaUpdate).subscribe(data => {
           this.toastr.info('La rutina fue editada con exíto', 'Rutina Editada!');

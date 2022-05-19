@@ -20,6 +20,13 @@
                           </div>   
                       </div>
                       <div class="mb-3">
+                        <input type="text" formControlName="id_dieta" class="form-control form-control-lg"
+                            placeholder="ID dieta">
+                        <div class="text-danger"*ngIf="rutinaForm.get('id_dieta')?.hasError('required') && rutinaForm.get('id_dieta')?.touched">
+                            <span>El ID de la dieta <strong>es obligatorio</strong></span>
+                        </div>
+                    </div>
+                      <div class="mb-3">
                           <input type="number" formControlName="nivel" class="form-control form-control-lg"
                               placeholder="Nivel de rutina">
                           <div class="text-danger"*ngIf="rutinaForm.get('nivel')?.hasError('required') && rutinaForm.get('nivel')?.touched">
