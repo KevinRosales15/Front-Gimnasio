@@ -10,6 +10,9 @@ import { MasterComponent } from './components/roles/master/master.component';
 import { InstructorComponent } from './components/roles/instructor/instructor.component';
 import { AdminComponent } from './components/roles/admin/admin.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
+import { DietaComponent } from './components/dieta/dieta/dieta.component';
+import { CreardietaComponent } from './components/dieta/creardieta/creardieta.component';
+import { EditardietaComponent } from './components/dieta/editardieta/editardieta.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,11 @@ const routes: Routes = [
   { path: 'editar-sucursal', component: SucursalComponent },
   { path: 'rutinas', component: RutinaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
+  { path: 'dietas', component: DietaComponent },
+  { path: 'crear_dieta', component: CreardietaComponent },
+  { path: 'editar_dieta/:id', component: EditardietaComponent },
+
+
 ];
 
 @NgModule({

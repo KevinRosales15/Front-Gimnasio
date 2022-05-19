@@ -28,7 +28,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PaginacionPipe } from './pipes/paginacion.pipe';
 import { DietaComponent } from './components/dieta/dieta/dieta.component';
-
+import { CreardietaComponent } from './components/dieta/creardieta/creardieta.component';
+import { EditardietaComponent } from './components/dieta/editardieta/editardieta.component';
+import { MatRadioModule } from '@angular/material/radio'
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -46,6 +49,8 @@ import { DietaComponent } from './components/dieta/dieta/dieta.component';
     ListarSucursalComponent,
     PaginacionPipe,
     DietaComponent,
+    CreardietaComponent,
+    EditardietaComponent,
 
   ],
   imports: [
@@ -64,6 +69,8 @@ import { DietaComponent } from './components/dieta/dieta/dieta.component';
     SocketIoModule,
     MatTooltipModule,
     MatPaginatorModule,
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
