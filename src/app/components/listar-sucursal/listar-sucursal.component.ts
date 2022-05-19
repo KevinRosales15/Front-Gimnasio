@@ -21,6 +21,8 @@ export class ListarSucursalComponent implements OnInit {
  
 
   sucursal$: Subscription;
+
+  
   listSucursal: sucursal[] = [];
   page_size: number = 5;
   page_number: number = 1;
@@ -32,7 +34,7 @@ export class ListarSucursalComponent implements OnInit {
   }
 
   
-  constructor(private sucursalService: SucursalService, private toastr: ToastrService) {
+  constructor(private sucursalService: SucursalService,  private toastr: ToastrService) {
    }
 
 
@@ -40,6 +42,8 @@ export class ListarSucursalComponent implements OnInit {
     this.getSucursales();
     
   }
+
+ 
 
 
 
@@ -50,9 +54,10 @@ export class ListarSucursalComponent implements OnInit {
     });
   }
 
+  
+
 
   DialogEliminarSucursal(id: any){
-    console.log('id a eliminar',id);
     Swal.fire({
       title:'Se va a eliminar la sucursal',
       text: 'Esta acción no puede revertirse',
@@ -74,7 +79,6 @@ export class ListarSucursalComponent implements OnInit {
   }
 
   DialogEditarSucursal(sucursal: any){
-    console.log('Sucursal a editar',sucursal);
     Swal.fire({
       html: `
         <h1 style="text-align: center; display: block; color: #3085d6;">Editar Sucursal</h1><br>
