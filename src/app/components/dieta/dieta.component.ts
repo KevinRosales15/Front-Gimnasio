@@ -1,8 +1,9 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { DietaService } from 'src/app/services/dieta/dieta.service';
-import { Subscription } from 'rxjs';
+import { reduce, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dieta',
@@ -15,6 +16,7 @@ export class DietaComponent implements OnInit {
   data: Elements[] = []
 
   dieta: string;
+  llave: boolean;
 
 
   getdietas$: Subscription;
@@ -22,8 +24,11 @@ export class DietaComponent implements OnInit {
   createdieta$: Subscription;
 
 
-  constructor(private dietaService: DietaService, private router:Router) {
+  constructor(private dietaService: DietaService, private router:Router, fb: FormBuilder) {
     this.dieta = '';
+    this.llave = true;
+
+    
   }
 
   ngOnInit(): void {
@@ -39,28 +44,29 @@ export class DietaComponent implements OnInit {
   }
 
   createDieta() {
-    // this.createdieta$ = this.dietaService.createDieta().subscribe(entry => {
-    //   this.data = entry.dieta;
-    //   console.log('entry', this.data)
-    // });
-    
 
+    this.router.navigateByUrl('crear_dieta');
+  
   }
 
-  getDieta() {
-
+  getDietaById(_id: any) {
+    alert('Dieta ID: ' + _id);
   }
 
-  updateDieta() {
-    console.log('dieta editada');
+  updateDieta(_id: any) {
+
+    alert('Dieta ID: ' + _id);
+    this.router.navigateByUrl('editar_dieta/:_id');
+
   }
 
 
   deleteDieta(dieta: any) {
     Swal.fire({
-      title: 'Estas seguro de eliminar?',
+      title: 'Estas seguro de eliminar la dieta?',
       text: "¡No podrás revertir esto!",
       icon: 'warning',
+      iconColor: 'red',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
@@ -71,24 +77,21 @@ export class DietaComponent implements OnInit {
         Swal.fire(
           'Eliminado!',
           'Se ha eliminado exitosamente'
-        );
-        
-        this.deletedieta$ = this.dietaService.deleteDieta(dieta._id).subscribe(rest => {
-          console.log('dieta eliminada', dieta._id);
-
+          );
+          this.deletedieta$ = this.dietaService.deleteDieta(dieta._id).subscribe(rest => {
+            console.log('dieta eliminada', dieta._id);
+            this.getDietas();
         });
       }
     });
-    
-    
   }
+
 
   ngOnDestroy(): void {
-    this.getdietas$.unsubscribe();
-    this.deletedieta$.unsubscribe();
-    this.createdieta$.unsubscribe();
+    // this.getdietas$.unsubscribe();
+    // this.deletedieta$.unsubscribe();
+    // this.createdieta$.unsubscribe();
   }
-
 }
 
 export interface Elements {
@@ -102,3 +105,4 @@ export interface Elements {
   proteinas: number;
   peso: number;
 }
+
