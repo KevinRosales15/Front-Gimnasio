@@ -7,8 +7,7 @@
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>Ronnie Coleman</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="https://us.123rf.com/450wm/john79/john791702/john79170200044/71544543-gimnasio-y-dise%C3%B1o-de-fitness-un-hombre-con-una-mancuerna-en-la-mano.jpg">
-
+        
         <mat-card-content>
             <form [formGroup]="datosClienteForm" (ngSubmit)="putDatos()" class="example-form">
                 <mat-form-field class="example-full-width" appearance="fill">
@@ -41,14 +40,11 @@
               </mat-form-field>
               <br>
 
-              <mat-form-field class="example-full-width" aspecto = "fill" > 
-                <mat-label> Sucursal </mat-label> 
-                  <mat-select formControlName="sucursal"> 
-                    <mat-option for = "sucursal" value="1"> Zona 10 </mat-option>
-                    <mat-option for = "sucursal" value="2"> Zona 15 </mat-option> 
-                    <mat-option for = "sucursal" value="3"> Miraflores </mat-option>
-                  </mat-select> 
-              </mat-form-field> 
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label for="sucursal">No. Sucursal </mat-label>
+                <input matInput id="sucursal" type="number" formControlName="noSucursal" maxlength="8" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+              </mat-form-field>
+              
               <br>
 
               <mat-form-field class="example-full-width" aspecto = "fill" > 

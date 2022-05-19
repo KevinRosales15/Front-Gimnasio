@@ -1,8 +1,12 @@
-.example-card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+.ButtonHome button {
+    background: #fff;
+    color: black;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 120px;
+    height: 40px;
+    margin-top: 25px;
+    margin-left: 70px;
+    cursor: pointer;
+    border: 2px solid black;
+}
