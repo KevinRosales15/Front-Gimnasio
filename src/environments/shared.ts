@@ -13,6 +13,7 @@ export class SharedEndPoints {
             VERIFYEMAIL: this.API_URL + '/verifyEmail',
             SUCURSAL: this.API_URL + '/sucursal',
             LOGIN:this.API_URL + '/login',
+            DIETA: this.API_URL + '/dieta'
         }
     }
 }
