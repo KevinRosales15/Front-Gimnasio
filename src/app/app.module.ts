@@ -25,13 +25,16 @@ import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatPaginatorModule} from '@angular/material/paginator';
 import { PaginacionPipe } from './pipes/paginacion.pipe';
 import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
 import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { DietasComponent } from './components/dietas/dietas/dietas.component';
+import { CreardietaComponent } from './components/dietas/creardieta/creardieta.component';
+import { PaginacionDietasPipe } from './pipes/paginacion-dietas.pipe';
 
 
 
@@ -52,6 +55,11 @@ import {MatSelectModule} from '@angular/material/select';
     PaginacionRutinasPipe,
     NuevarutinaComponent,
     RegistroClientesComponent,
+    DietasComponent,
+    CreardietaComponent,
+    PaginacionDietasPipe,
+
+
   ],
   imports: [
     BrowserModule,

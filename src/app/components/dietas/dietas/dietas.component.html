@@ -1,0 +1,58 @@
+<body>
+  <div class ="ButtonHome">
+    <button  routerLink="/master"><i class="fa-solid fa-angles-left"></i>Volver</button>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body text-center">
+            <span class="titulo">LISTADO DE DIETAS</span>
+            <button class="btn btn-success float-end" routerLink="/creardieta">CREAR</button>
+            <table *ngIf="listDieta.length>0 " class="table table-striped mt-3">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nivel</th>
+                  <th scope="col">Objetivo</th>
+                  <th scope="col">Tiempo</th>
+                  <th scope="col">Alimentos</th>
+                  <th scope="col">Carbohidratos</th>
+                  <th scope="col">Proteinas</th>
+                  <th scope="col">Peso</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let dieta of listDieta | paginacionRutinas: page_size: page_number">
+                  <td>{{dieta.id_dieta}}</td>
+                  <td>{{dieta.nivel}}</td>
+                  <td>{{dieta.id_dieta}}</td>
+                  <td>{{dieta.tiempo}}</td>
+                  <td>{{dieta.alimentos}}</td>
+                  <td>{{dieta.carbohidratos}}</td>
+                  <td>{{dieta.proteinas}}</td>
+                  <td>{{dieta.peso}}</td>
+                  <td>
+                    <i (click)="VerDieta(dieta._id, dieta.nivel, dieta.tiempo, dieta.alimentos, dieta.carbohidratos, dieta.proteinas, dieta.peso)"  class="ver fa-solid fa-eye" matTooltip="Ver Dieta" matTooltipPosition="left" matTooltipClass="TooltipVer"></i>
+                    <i (click)="DialogEditarDieta(dieta)"  class="editar fa-solid fa-pen-to-square" matTooltip="Editar Dieta" matTooltipPosition="left" matTooltipClass="TooltipEditar" ></i>
+                    <i (click)="DialogEliminarDieta(dieta._id)"  class="eliminar fa-solid fa-delete-left" matTooltip="Eliminar Dieta" matTooltipPosition="left" matTooltipClass="TooltipEliminar" ></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <mat-paginator 
+              [length]="listDieta.length"
+              [pageSize]="page_size"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="handlePage($event)">
+            </mat-paginator>
+            <h3 *ngIf="listDieta.length == 0 " style="text-align: center; margin-top: 20px;">No hay dietas para mostrar.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</body>

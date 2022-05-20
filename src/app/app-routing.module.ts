@@ -13,6 +13,8 @@ import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plata
 import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
 import { RegistroClientesComponent } from './components/registro-clientes/registro-clientes.component';
+import { DietasComponent } from './components/dietas/dietas/dietas.component';
+
 
 
 const routes: Routes = [
@@ -29,12 +31,11 @@ const routes: Routes = [
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   { path: 'lista-empleados', component:ListaEmpleadosComponent },
   { path: 'nuevarutina', component: NuevarutinaComponent },
-  { path: 'CrearClientes', component: RegistroClientesComponent }
+  { path: 'CrearClientes', component: RegistroClientesComponent },
+  { path: 'dietas', component: DietasComponent },
+
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
   
-
-
-
 ];
 
 @NgModule({
