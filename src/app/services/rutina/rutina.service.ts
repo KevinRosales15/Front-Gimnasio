@@ -12,7 +12,7 @@ export class RutinaService {
   constructor(public httpClient: HttpClient) { }
 
   getRutina(id: any): Observable<any> {
-    return this.httpClient.get<any>(environment.END_POINTS.SUCURSAL,{params:{id}});
+    return this.httpClient.get<any>(environment.END_POINTS.RUTINAS,{params:{id}});
   }
 
   getRutinas(): Observable<any> {
