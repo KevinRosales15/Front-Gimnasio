@@ -5,7 +5,7 @@ import { empleado } from 'src/app/models/empleado';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,6 +15,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 export class ListaEmpleadosComponent implements OnInit {
 
+  identificador: number;
   empleado$: Subscription;
   listaempleado: empleado[] = [];
   page_size: number = 5;
@@ -25,9 +26,16 @@ export class ListaEmpleadosComponent implements OnInit {
     this.page_size = e.pageSize;
     this.page_number = e.pageIndex + 1;
   }
-  constructor(private tablaempleadoService: TablaempleadoService, private toastr: ToastrService,) { }
+  constructor(private tablaempleadoService: TablaempleadoService, private toastr: ToastrService, public router: Router) { }
 
   ngOnInit(): void {
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) { this.identificador = 0; }
+    
+    if (this.identificador != 1 && this.identificador != 2) {
+      this.router.navigate(['/login']);
+    }
     this.getRegistro();
   }
  
@@ -40,6 +48,17 @@ export class ListaEmpleadosComponent implements OnInit {
     });
   }
 
+  volver() {
+    if (this.identificador == 1) {
+      this.router.navigate(['/master'], {state: {blocker: this.identificador}});
+    } else if (this.identificador == 2) {
+      this.router.navigate(['/administrador'], {state: {blocker: this.identificador}});
+    }
+  }
+
+  crear() {
+    this.router.navigate(['/RegistroEmpleado'], {state: {blocker: this.identificador}});
+  }
 
   DialogEliminarEmpleados(empleado: any){
     console.log('id a eliminar',empleado);

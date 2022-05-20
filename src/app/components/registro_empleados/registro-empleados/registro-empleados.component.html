@@ -62,7 +62,7 @@
                   </div>
               </div>
                       <div class="mb-3">
-                          <button routerLink="/lista-empleados" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                          <button (click)="volver()" class="btn btn-secondary btn-lg float-start">VOLVER</button>
                           <button type="submit" [disabled]="empleadoForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
                       </div>
                   </form>

@@ -17,23 +17,35 @@ export class RegistroEmpleadosComponent implements OnInit {
   empleadoForm: FormGroup;
   titulo = 'Registrar Empleado';
   id: string | null ;
+  identificador: number;
 
   constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, private empleadoService: TablaempleadoService) { 
-   
-      this.empleadoForm = this.fb.group({
-      nombreCompleto: ['', Validators.required],
-      dpi: ['', Validators.required],
-      fechaNacimiento: ['', Validators.required],
-      email: ['', Validators.required],
-      telefono: ['', Validators.required],
-      noSucursal: ['', Validators.required],
-      password: ['', Validators.required],
-      puesto_rol: ['', Validators.required],
-    })
+    this.empleadoForm = this.fb.group({
+    nombreCompleto: ['', Validators.required],
+    dpi: ['', Validators.required],
+    fechaNacimiento: ['', Validators.required],
+    email: ['', Validators.required],
+    telefono: ['', Validators.required],
+    noSucursal: ['', Validators.required],
+    password: ['', Validators.required],
+    puesto_rol: ['', Validators.required],
+   })
   }
 
   ngOnInit(): void {
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) { this.identificador = 0; }
+    
+    if (this.identificador != 1 && this.identificador != 2) {
+      this.router.navigate(['/login']);
+    }
   }
+
+  volver() {
+    this.router.navigate(['/lista-empleados'], {state: {blocker: this.identificador}});
+  }
+
   agregarempleado() {
     const REGISTRO_EMPLEADOS: empleado = {
       _id: this.id,
@@ -49,8 +61,8 @@ export class RegistroEmpleadosComponent implements OnInit {
     console.log('EMPLEADO',REGISTRO_EMPLEADOS);
     this.empleado$ = this.empleadoService.createRegistro(REGISTRO_EMPLEADOS).subscribe(data =>{
       this.toastr.success('Usuario creado con exíto');
-      this.router.navigate(['/lista-empleados']);
+      this.router.navigate(['/lista-empleados'], {state: {blocker: this.identificador}});
     })
     }
     
-  }
+}

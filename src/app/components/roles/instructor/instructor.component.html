@@ -6,42 +6,37 @@
         </h1>
         <div class="container-cards full-box">
                 
-                <div class="card shadow-1-strong">
-                    <img class="card-img-top" src="../../../../assets/roles/images/clientes.jpg" alt="nombre_platillo">
-                    <div class="card-body text-center">
-                        <h5 class="card-title font-weight-bold">Clientes</h5>
-                    </div>
-                    <div class="card-body text-center">
-                        <a href="#" class="btn btn-info btn-sm">&nbsp; Listar</a>
-                    </div>
+            <div class="card shadow-1-strong">
+                <img class="card-img-top" src="../../../../assets/roles/images/rutinas.jpg">
+                <div class="card-body text-center">
+                    <h5 class="card-title font-weight-bold">Rutinas</h5>
                 </div>
-    
-                
-                <div class="card shadow-1-strong">
-                    <img class="card-img-top" src="../../../../assets/roles/images/rutinas.jpg" alt="nombre_platillo">
-                    <div class="card-body text-center">
-                        <h5 class="card-title font-weight-bold">Rutinas</h5>
+                <div class="card-body text-center">
+                    <a (click)="accederRutinas()" class="btn btn-info btn-sm">&nbsp; Acceder</a>
                     </div>
-                    <div class="card-body text-center">
-                        <a routerLink="/rutinas" class="btn btn-info btn-sm">&nbsp; Listar</a>
-                        </div>
+            </div>
+
+            <div class="card shadow-1-strong">
+                <img class="card-img-top" src="../../../../assets/roles/images/clientes.jpg">
+                <div class="card-body text-center">
+                    <h5 class="card-title font-weight-bold">Clientes</h5>
                 </div>
-    
-                
-                <div class="card shadow-1-strong">
-                    <img class="card-img-top" src="../../../../assets/roles/images/dietas.jpg" alt="nombre_platillo">
-                    <div class="card-body text-center">
-                        <h5 class="card-title font-weight-bold">Dietas</h5>
-                    </div>
-                    <div class="card-body text-center">
-                        <a href="#" class="btn btn-info btn-sm">&nbsp; Listar</a>
-                    </div>
+                <div class="card-body text-center">
+                    <a (click)="accederClientes()" class="btn btn-info btn-sm">&nbsp; Acceder</a>
                 </div>
-    
+            </div>
+
+            <div class="card shadow-1-strong">
+                <img class="card-img-top" src="../../../../assets/roles/images/dietas.jpg">
+                <div class="card-body text-center">
+                    <h5 class="card-title font-weight-bold">Dietas</h5>
+                </div>
+                <div class="card-body text-center">
+                    <a (click)="accederDietas()" class="btn btn-info btn-sm">&nbsp; Acceder</a>
+                </div>
+            </div>
         </div>
         <br>
-        <p class="text-center"><a routerLink="/login" class="btn btn-primary">&nbsp; Salir</a></p>
-    
+        <p class="text-center"><a routerLink="/login" class="btn btn-primary">&nbsp; Cerrar Sesion</a></p>
     </div>
-    <script src="https://kit.fontawesome.com/5996916878.js" crossorigin="anonymous"></script>
 </body>

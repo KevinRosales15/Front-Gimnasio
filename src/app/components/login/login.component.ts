@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           this.identificador = 1;
         } else if (entry.rol == "administrador") {
           this.identificador = 2;
-        } else {
+        } else if (entry.rol == "instructor") {
           this.identificador = 3;
         }
         this.router.navigate(['/' + entry.rol], {state: {blocker: this.identificador}});

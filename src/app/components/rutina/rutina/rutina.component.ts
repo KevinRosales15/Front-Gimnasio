@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import { RutinaService } from 'src/app/services/rutina/rutina.service';
 import { Subscription } from 'rxjs';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { rutina } from 'src/app/models/rutinamd';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rutina',
@@ -14,22 +14,44 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 
 export class RutinaComponent implements OnInit {
-  rutina$: Subscription;
 
+  rutina$: Subscription;
   listRutina: rutina[] = [];
   page_size: number = 5;
   page_number: number = 1;
   pageSizeOptions = [5,10,25,50,100];
+  identificador: number;
 
   handlePage(e: PageEvent){
     this.page_size = e.pageSize;
     this.page_number = e.pageIndex + 1;
   }
 
-  constructor(private rutinaService: RutinaService, private toastr: ToastrService) {  }
+  constructor(private rutinaService: RutinaService, private toastr: ToastrService, public router: Router) {  }
 
   ngOnInit(): void {
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) { this.identificador = 0; }
+    
+    if (this.identificador != 1 && this.identificador != 2 && this.identificador != 3) {
+      this.router.navigate(['/login']);
+    }
     this.getRutinas();
+  }
+
+  volver() {
+    if (this.identificador == 1) {
+      this.router.navigate(['/master'], {state: {blocker: this.identificador}});
+    } else if (this.identificador == 2) {
+      this.router.navigate(['/administrador'], {state: {blocker: this.identificador}});
+    } else if (this.identificador == 3) {
+      this.router.navigate(['/instructor'], {state: {blocker: this.identificador}});
+    }
+  }
+
+  crear() {
+    this.router.navigate(['/nuevarutina'], {state: {blocker: this.identificador}});
   }
 
   getRutinas() {

@@ -16,6 +16,7 @@ export class SucursalComponent implements OnInit {
 
   cantidadClientes: number = 0;
   cantidadEmpleados: number = 0;
+  identificador: number;
 
   sucursal$: Subscription;
   listSucursal: sucursal[] = [];
@@ -33,7 +34,17 @@ export class SucursalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) { this.identificador = 0; }
     
+    if (this.identificador != 1) {
+      this.router.navigate(['/login']);
+    }
+  }
+
+  volver() {
+    this.router.navigate(['/listar-sucursal'], {state: {blocker: this.identificador}});
   }
 
   verificarSucursal(){
@@ -69,13 +80,7 @@ export class SucursalComponent implements OnInit {
     console.log('objeto',SUCURSAL);
     this.sucursal$ = this.sucursalService.createSucursal(SUCURSAL).subscribe(data =>{
       this.toastr.success('La Sucursal fue creada con exíto', 'Sucursal Creada');
-      this.router.navigate(['/listar-sucursal']);
+      this.volver();
     })
   }
-  
-  
-
-
-
 }
-  

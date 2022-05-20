@@ -17,11 +17,27 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
     try {
       this.identificador = history.state.blocker;
-    } catch (error) {}
+    } catch (error) { this.identificador = 0; }
+
     if (this.identificador != 2) {
       this.router.navigate(['/login']);
     }
-    console.log(this.identificador);
+  }
+
+  accederEmpleados() {
+    this.router.navigate(['/lista-empleados'], {state: {blocker: this.identificador}});
+  }
+
+  accederClientes() {
+    this.router.navigate(['/ListarClientes'], {state: {blocker: this.identificador}});
+  }
+
+  accederRutinas() {
+    this.router.navigate(['/rutinas'], {state: {blocker: this.identificador}});
+  }
+
+  accederDietas() {
+    /* this.router.navigate(['/'], {state: {blocker: this.identificador}}); */
   }
 
 }

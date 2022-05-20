@@ -17,6 +17,7 @@ export class NuevarutinaComponent implements OnInit {
   rutinaForm: FormGroup;
   titulo = 'Crear rutina';
   id: string | null;
+  identificador: number;
 
   constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, private rutinaService: RutinaService) { 
     this.rutinaForm = this.fb.group({
@@ -32,6 +33,17 @@ export class NuevarutinaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) { this.identificador = 0; }
+    
+    if (this.identificador != 1 && this.identificador != 2 && this.identificador != 3) {
+      this.router.navigate(['/login']);
+    }
+  }
+
+  volver() {
+    this.router.navigate(['/rutinas'], {state: {blocker: this.identificador}});
   }
 
   agregarRutina() {
@@ -48,7 +60,7 @@ export class NuevarutinaComponent implements OnInit {
     console.log('objeto',RUTINA);
     this.rutina$ = this.rutinaService.createRutina(RUTINA).subscribe(data =>{
       this.toastr.success('La rutina fue creada con exíto', 'Rutina Creada');
-      this.router.navigate(['/rutinas']);
+      this.volver();
     })
   }
 

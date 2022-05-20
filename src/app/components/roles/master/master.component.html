@@ -8,71 +8,62 @@
         <div class="container-cards full-box">
     
                 <div class="card shadow-1-strong">
-                    <img class="card-img-top" src="../../../../assets/roles/images/sucursal.jpg" alt="nombre_platillo">
+                    <img class="card-img-top" src="../../../../assets/roles/images/sucursal.jpg">
                     <div class="card-body text-center">
                         <h5 class="card-title font-weight-bold">Sucursales</h5>
                     </div>
                     <div class="card-body text-center">
-                        <a routerLink="/listar-sucursal" class="btn btn-info btn-sm">&nbsp; Listar</a>
-                        &nbsp; &nbsp;
-                        <a routerLink="/crear-sucursal" class="btn btn-info btn-sm">&nbsp; Crear</a>
+                        <a (click)="accederSucursales()" class="btn btn-info btn-sm">&nbsp; Acceder</a>
                     </div>
                 </div>
     
                 
                 <div class="card shadow-1-strong">
-                    <img class="card-img-top" src="../../../../assets/roles/images/empleados.jpg" alt="nombre_platillo">
+                    <img class="card-img-top" src="../../../../assets/roles/images/empleados.jpg">
                     <div class="card-body text-center">
                         <h5 class="card-title font-weight-bold">Empleados</h5>
                     </div>
                     <div class="card-body text-center">
-                        <a routerLink="/lista-empleados" class="btn btn-info btn-sm">&nbsp; Listar</a>
-                        &nbsp; &nbsp;
-                        <a routerLink="/RegistroEmpleado" class="btn btn-info btn-sm">&nbsp; Ingresar</a>
+                        <a (click)="accederEmpleados()" class="btn btn-info btn-sm">&nbsp; Acceder</a>
                     </div>
                 </div>
     
                 
                 <div class="card shadow-1-strong">
-                    <img class="card-img-top" src="../../../../assets/roles/images/clientes.jpg" alt="nombre_platillo">
+                    <img class="card-img-top" src="../../../../assets/roles/images/clientes.jpg">
                     <div class="card-body text-center">
                         <h5 class="card-title font-weight-bold">Clientes</h5>
                     </div>
                     <div class="card-body text-center">
-                        <a href="#" class="btn btn-info btn-sm">&nbsp; Listar</a>
-                        &nbsp; &nbsp;
-                        <a href="#" class="btn btn-info btn-sm">&nbsp; Ingresar</a>
+                        <a (click)="accederClientes()" class="btn btn-info btn-sm">&nbsp; Acceder</a>
                     </div>
                 </div>
     
                 
                 <div class="card shadow-1-strong">
-                    <img class="card-img-top" src="../../../../assets/roles/images/rutinas.jpg" alt="nombre_platillo">
+                    <img class="card-img-top" src="../../../../assets/roles/images/rutinas.jpg">
                     <div class="card-body text-center">
                         <h5 class="card-title font-weight-bold">Rutinas</h5>
                     </div>
                     <div class="card-body text-center">
-                        <a routerLink="/rutinas" class="btn btn-info btn-sm">&nbsp; Listar</a>
-                        &nbsp; &nbsp;
-                        <a routerLink="/nuevarutina" class="btn btn-info btn-sm">&nbsp; Crear</a>
+                        <a (click)="accederRutinas()" class="btn btn-info btn-sm">&nbsp; Acceder</a>
                     </div>
                 </div>
     
                 
                 <div class="card shadow-1-strong">
-                    <img class="card-img-top" src="../../../../assets/roles/images/dietas.jpg" alt="nombre_platillo">
+                    <img class="card-img-top" src="../../../../assets/roles/images/dietas.jpg">
                     <div class="card-body text-center">
                         <h5 class="card-title font-weight-bold">Dietas</h5>
                     </div>
                     <div class="card-body text-center">
-                        <a href="#" class="btn btn-info btn-sm">&nbsp; Listar</a>
+                        <a (click)="accederDietas()" class="btn btn-info btn-sm">&nbsp; Acceder</a>
                     </div>
                 </div>
     
         </div>
         <br>
-        <p class="text-center"><a routerLink="/login" class="btn btn-primary">&nbsp; Salir</a></p>
+        <p class="text-center"><a routerLink="/login" class="btn btn-primary">&nbsp; Cerrar Sesión</a></p>
     
     </div>
-    <script src="https://kit.fontawesome.com/5996916878.js" crossorigin="anonymous"></script>
-    </body>
+</body>

@@ -20,7 +20,7 @@
                             </div>   
                         </div>
                         <div class="mb-3">
-                            <button routerLink="/listar-sucursal" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                            <button (click)="volver()" class="btn btn-secondary btn-lg float-start">VOLVER</button>
                             <button type="submit" [disabled]="sucursalForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
                         </div>
                     </form>

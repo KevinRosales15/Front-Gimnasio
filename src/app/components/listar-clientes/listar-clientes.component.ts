@@ -5,6 +5,7 @@ import { cliente } from 'src/app/models/clientes';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 
 
@@ -18,13 +19,12 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 })
 export class ListarClientesComponent implements OnInit {
 
- 
-
   cliente$: Subscription;
   listCliente: cliente[] = [];
   page_size: number = 5;
   page_number: number = 1;
   pageSizeOptions = [5,10,25,50,100];
+  identificador: number;
 
   handlePage(e: PageEvent){
     this.page_size = e.pageSize;
@@ -32,13 +32,33 @@ export class ListarClientesComponent implements OnInit {
   }
 
   
-  constructor(private clientesService: RegistroClientesService, private toastr: ToastrService) {
+  constructor(private clientesService: RegistroClientesService, private toastr: ToastrService, public router: Router) {
    }
 
 
   ngOnInit(): void {
-    this.getClientes();
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) { this.identificador = 0; }
     
+    if (this.identificador != 1 && this.identificador != 2 && this.identificador != 3) {
+      this.router.navigate(['/login']);
+    }
+    this.getClientes();
+  }
+
+  volver() {
+    if (this.identificador == 1) {
+      this.router.navigate(['/master'], {state: {blocker: this.identificador}});
+    } else if (this.identificador == 2) {
+      this.router.navigate(['/administrador'], {state: {blocker: this.identificador}});
+    } else if (this.identificador == 3) {
+      this.router.navigate(['/instructor'], {state: {blocker: this.identificador}});
+    }
+  }
+
+  crear() {
+    this.router.navigate(['/CrearClientes'], {state: {blocker: this.identificador}});
   }
 
   getClientes(){

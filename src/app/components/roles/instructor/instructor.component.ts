@@ -17,11 +17,22 @@ export class InstructorComponent implements OnInit {
   ngOnInit(): void {
     try {
       this.identificador = history.state.blocker;
-    } catch (error) {}
+    } catch (error) { this.identificador = 0; }
     if (this.identificador != 3) {
       this.router.navigate(['/login']);
     }
-    console.log(this.identificador);
+  }
+
+  accederRutinas() {
+    this.router.navigate(['/rutinas'], {state: {blocker: this.identificador}});
+  }
+  
+  accederClientes() {
+    this.router.navigate(['/ListarClientes'], {state: {blocker: this.identificador}});
+  }
+
+  accederDietas() {
+    /* this.router.navigate(['/'], {state: {blocker: this.identificador}}); */
   }
 
 }

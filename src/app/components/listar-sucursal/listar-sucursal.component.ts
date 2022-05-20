@@ -5,6 +5,7 @@ import { sucursal } from 'src/app/models/sucursal';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 
 
@@ -18,34 +19,40 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 export class ListarSucursalComponent implements OnInit {
 
- 
-
-  sucursal$: Subscription;
-
-  
+  sucursal$: Subscription;  
   listSucursal: sucursal[] = [];
   page_size: number = 5;
   page_number: number = 1;
   pageSizeOptions = [5,10,25,50,100];
+  identificador: number;
 
   handlePage(e: PageEvent){
     this.page_size = e.pageSize;
     this.page_number = e.pageIndex + 1;
   }
-
   
-  constructor(private sucursalService: SucursalService,  private toastr: ToastrService) {
-   }
+  constructor(private sucursalService: SucursalService,  private toastr: ToastrService, public router: Router) {
+  }
 
 
   ngOnInit(): void {
-    this.getSucursales();
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) { this.identificador = 0; }
     
+    if (this.identificador != 1) {
+      this.router.navigate(['/login']);
+    }
+    this.getSucursales();
   }
 
- 
+  volver() {
+    this.router.navigate(['/master'], {state: {blocker: this.identificador}});
+  }
 
-
+  crear() {
+    this.router.navigate(['/crear-sucursal'], {state: {blocker: this.identificador}});
+  }
 
   getSucursales(){
     this.sucursal$ = this.sucursalService.getSucursales().subscribe(data =>{
@@ -53,9 +60,6 @@ export class ListarSucursalComponent implements OnInit {
       console.log('sucursales',this.listSucursal);
     });
   }
-
-  
-
 
   DialogEliminarSucursal(id: any){
     Swal.fire({
