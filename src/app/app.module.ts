@@ -25,15 +25,14 @@ import { ListarClientesComponent } from './components/listar-clientes/listar-cli
 import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { ToastrModule } from 'ngx-toastr';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaginacionPipe } from './pipes/paginacion.pipe';
 import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
 import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
-import {MatSelectModule} from '@angular/material/select';
-
+import { MatSelectModule } from '@angular/material/select';
+import { WebsocketComponent } from './components/websocket/websocket.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +53,8 @@ import {MatSelectModule} from '@angular/material/select';
     RegistroClientesComponent,
     ListarClientesComponent,
     RegistroClientesComponent,
+    RegistroClientesComponent,
+    WebsocketComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +69,6 @@ import {MatSelectModule} from '@angular/material/select';
     MatTableModule,
     MatIconModule,
     ToastrModule.forRoot(),
-    SocketIoModule,
     MatTooltipModule,
     MatPaginatorModule,
     MatSelectModule,

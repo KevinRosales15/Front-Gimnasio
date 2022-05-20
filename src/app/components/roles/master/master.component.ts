@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-master',
@@ -9,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
               '../../../../assets/roles/css/normalize.css']
 })
 export class MasterComponent implements OnInit {
+  identificador: number;
 
-  constructor() { }
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) {}
+    if (this.identificador != 1) {
+      this.router.navigate(['/login']);
+    }
+    console.log(this.identificador);
   }
 
 }

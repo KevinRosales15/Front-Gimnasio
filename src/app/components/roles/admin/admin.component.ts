@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -9,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
               '../../../../assets/roles/css/normalize.css']
 })
 export class AdminComponent implements OnInit {
+  identificador: number;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) {}
+    if (this.identificador != 2) {
+      this.router.navigate(['/login']);
+    }
+    console.log(this.identificador);
   }
 
 }

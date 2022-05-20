@@ -94,7 +94,7 @@ export class PagoPlataformaComponent implements OnInit {
       this.realizarPago$ = this.PagoPlataformaService.realizarPago(this.cardForm.value.email).subscribe(entry => {
         if (entry.result == 'success') {
           this.toastr.success('Successfull Payment!','Su pago se ha realizado con éxito!!!');
-          this.router.navigate(['/login']);    
+          this.router.navigate(['/login']);
         } else {
           this.toastr.warning('Por favor, intente denuevo','Ha ocurrido un error inesperado!!');
         }

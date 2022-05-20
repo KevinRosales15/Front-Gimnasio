@@ -13,7 +13,8 @@ import {formatDate} from '@angular/common';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  currentDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');;
+  currentDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  identificador: number;
   
   constructor(private LoginService:LoginService , private fb: FormBuilder, private toastr: ToastrService, public router: Router) { 
     this.loginForm = this.fb.group({
@@ -38,7 +39,14 @@ export class LoginComponent implements OnInit {
     this.logIn$ = this.LoginService.logIn(this.loginForm.value).subscribe(entry => {
       if (entry.rol != null) {
         this.toastr.success(entry.message, 'Successfull Login!!!');
-        this.router.navigate(['/' + entry.rol]);
+        if (entry.rol == "master") {
+          this.identificador = 1;
+        } else if (entry.rol == "administrador") {
+          this.identificador = 2;
+        } else {
+          this.identificador = 3;
+        }
+        this.router.navigate(['/' + entry.rol], {state: {blocker: this.identificador}});
 
       } else if (entry.message == 'Email no asociado') {
         this.toastr.warning('El email no se encuentra asociado a una cuenta', 'Warning!!');

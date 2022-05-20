@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'RegistroEmpleado', component: RegistroEmpleadosComponent },
   { path: 'master', component: MasterComponent },
   { path: 'instructor', component: InstructorComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'administrador', component: AdminComponent },
   { path: 'listar-sucursal', component: ListarSucursalComponent },
   { path: 'crear-sucursal', component: SucursalComponent },
   { path: 'editar-sucursal', component: SucursalComponent },
