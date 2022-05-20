@@ -58,7 +58,9 @@ export class ListarClientesComponent implements OnInit {
   }
 
   crear() {
-    this.router.navigate(['/CrearClientes'], {state: {blocker: this.identificador}});
+    if (this.identificador == 1 || this.identificador == 2) {
+      this.router.navigate(['/CrearClientes'], {state: {blocker: this.identificador}});
+    }
   }
 
   getClientes(){
