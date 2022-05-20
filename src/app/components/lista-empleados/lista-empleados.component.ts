@@ -89,15 +89,15 @@ export class ListaEmpleadosComponent implements OnInit {
         <h1 style="text-align: center; display: block; color: #3085d6;">Editar Empleado</h1><br>
         <form>
           <strong style="text-align: left; display: block;"> Nombre Completo </strong><br>
-          <input type="text" id="nombreCompleto" value="${empleado.nombreCompleto}" class="form-control" disabled><br>
+          <input type="text" id="nombreCompleto" value="${empleado.nombreCompleto}" class="form-control"><br>
           <strong style="text-align: left; display: block;"> DPI </strong><br>
-          <input type="text"  id="dpi"  value="${empleado.dpi}"   class="form-control" disabled><br>
+          <input type="text"  id="dpi"  value="${empleado.dpi}"   class="form-control" maxlength="13" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"><br>
           <strong style="text-align: left; display: block;"> Fecha de Nacimiento </strong><br>
-          <input type="text" id="fechaNacimiento"  value="${empleado.fechaNacimiento}"  class="form-control" disabled><br>
+          <input type="text" id="fechaNacimiento"  value="${empleado.fechaNacimiento}"  class="form-control"><br>
           <strong style="text-align: left; display: block;"> Email </strong><br>
           <input type="text" id="email" value="${empleado.email}"  class="form-control"><br>
           <strong style="text-align: left; display: block;"> Telefono </strong><br>
-          <input type="text" id="telefono" value="${empleado.telefono}"  class="form-control"><br>
+          <input type="text" id="telefono" value="${empleado.telefono}"  class="form-control" maxlength="8" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"><br>
           <strong style="text-align: left; display: block;"> No. Sucursal </strong><br>
           <input type="number" id="noSucursal" value="${empleado.noSucursal}"  class="form-control"  ><br>
           <strong style="text-align: left; display: block;"> Puesto </strong><br>
