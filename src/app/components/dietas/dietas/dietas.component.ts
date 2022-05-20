@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ToastrService } from 'ngx-toastr';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Dieta } from 'src/app/models/dieta';
 
 
@@ -20,16 +20,38 @@ export class DietasComponent implements OnInit {
   page_size: number = 5;
   page_number: number = 1;
   pageSizeOptions = [5,10,25,50,100];
+  identificador: number;
 
   handlePage(e: PageEvent){
     this.page_size = e.pageSize;
     this.page_number = e.pageIndex + 1;
   }
 
-  constructor(private dietaService: DietasService, private toastr: ToastrService) {  }
+  constructor(private dietaService: DietasService, private toastr: ToastrService, private router: Router) {  }
 
   ngOnInit(): void {
+    try {
+      this.identificador = history.state.blocker;
+    } catch (error) { this.identificador = 0; }
+    
+    if (this.identificador != 1 && this.identificador != 2 && this.identificador != 3) {
+      this.router.navigate(['/login']);
+    }
     this.getDietas();
+  }
+
+  volver() {
+    if (this.identificador == 1) {
+      this.router.navigate(['/master'], {state: {blocker: this.identificador}});
+    } else if (this.identificador == 2) {
+      this.router.navigate(['/administrador'], {state: {blocker: this.identificador}});
+    } else if (this.identificador == 3) {
+      this.router.navigate(['/instructor'], {state: {blocker: this.identificador}});
+    }
+  }
+
+  crear() {
+    this.router.navigate(['/crear_dieta'], {state: {blocker: this.identificador}});
   }
 
   getDietas() {
