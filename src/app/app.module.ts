@@ -33,6 +33,8 @@ import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
 import { MatSelectModule } from '@angular/material/select';
 import { WebsocketComponent } from './components/websocket/websocket.component';
+import { DietasComponent } from './components/dietas/dietas/dietas.component';
+import { CreardietaComponent } from './components/dietas/creardieta/creardieta.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { WebsocketComponent } from './components/websocket/websocket.component';
     ListarClientesComponent,
     RegistroClientesComponent,
     RegistroClientesComponent,
-    WebsocketComponent
+    WebsocketComponent,
+    DietasComponent,
+    CreardietaComponent
   ],
   imports: [
     BrowserModule,

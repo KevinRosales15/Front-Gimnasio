@@ -9,7 +9,7 @@
         <div class="card">
           <div class="card-body text-center">
             <span class="titulo">LISTADO DE DIETAS</span>
-            <button class="btn btn-success float-end" routerLink="/creardieta">CREAR</button>
+            <button class="btn btn-success float-end" (click)="crear()">CREAR</button>
             <table *ngIf="listDieta.length>0 " class="table table-striped mt-3">
               <thead>
                 <tr>
