@@ -53,7 +53,7 @@ import {MatSelectModule} from '@angular/material/select';
     PaginacionRutinasPipe,
     NuevarutinaComponent,
     DietaComponent,
-    RegistroClientesComponent
+    RegistroClientesComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +71,7 @@ import {MatSelectModule} from '@angular/material/select';
     SocketIoModule,
     MatTooltipModule,
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -49,7 +49,7 @@ export class RegistroEmpleadosComponent implements OnInit {
     console.log('EMPLEADO',REGISTRO_EMPLEADOS);
     this.empleado$ = this.empleadoService.createRegistro(REGISTRO_EMPLEADOS).subscribe(data =>{
       this.toastr.success('Usuario creado con exíto');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/lista-empleados']);
     })
     }
     

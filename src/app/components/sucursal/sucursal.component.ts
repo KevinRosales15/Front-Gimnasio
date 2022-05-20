@@ -44,6 +44,7 @@ export class SucursalComponent implements OnInit {
         if(sucur == 0 ){
           this.sucursalForm.get('noSucursal')?.reset();
           this.toastr.warning('El número de sucursal no puede ser 0','Aviso!!');
+          
         }
         for(let i=0; i < this.listSucursal.length; i++){
           if(this.listSucursal[i].noSucursal == sucur ){
@@ -64,6 +65,7 @@ export class SucursalComponent implements OnInit {
       cantidadClientes: this.cantidadClientes,
       cantidadEmpleados: this.cantidadEmpleados,
     }
+    this.verificarSucursal();
     console.log('objeto',SUCURSAL);
     this.sucursal$ = this.sucursalService.createSucursal(SUCURSAL).subscribe(data =>{
       this.toastr.success('La Sucursal fue creada con exíto', 'Sucursal Creada');

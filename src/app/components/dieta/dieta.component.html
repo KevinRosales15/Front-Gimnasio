@@ -1,14 +1,81 @@
-<!-- <p>.</p>
+<br>
+<br>
+<br>
+<br>
 
-<p>.</p>
-<p>.</p>
+<!-- Aquí empieza la cabecera de la web 
 
-<p style="font-size: 80px;">          sdsadsdsad x</p>
+<div class="m-0 row justify-content-center" >
 
-<table mat-table [dataSource]="data" class="mat-elevation-z8"></table>
+  <div id="btnss" class="col-auto  text-center row" >
 
-<p>{{}}}</p>
- -->
+    <div class="btnv" id="ButtonHome" style="padding: 5px;">
+      <button routerLink="/master"><i class="fa-solid fa-angles-left"></i>Volver</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="padding: 10px; background-color: rgb(5, 0, 4); height: 55px;">
+      <h1 style="font-family: Dejavu Sans; font-size: 100px; color: rgb(255, 255, 255);"><strong>DIETAS</strong></h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+
+    <div class="btnc" style="padding: 10px;">
+      <button (click)="createDieta()" mat-raised-button color="primary">
+        <mat-icon>add_box</mat-icon><a [routerLink]="['/dietas/creardieta']"></a> Crear nuevo item
+      </button>
+    </div>
+
+  </div>
+  
+  <br>
+  <br>
+
+  <div class="col-auto  text-center m-0 row justify-content-center ">
+
+    <table mat-table [dataSource]="data">
+
+      <ng-container matColumnDef="id_dieta">
+        <th class="alin" mat-header-cell *matHeaderCellDef> Dieta </th>
+        <td class="alin" mat-cell *matCellDef="let element"> {{element.id_dieta}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nivel">
+        <th class="alin" mat-header-cell *matHeaderCellDef> Nivel </th>
+        <td class="alin" mat-cell *matCellDef="let element"> {{element.nivel}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tiempo">
+        <th class="alin2" mat-header-cell *matHeaderCellDef> Tiempo </th>
+        <td class="alin2" mat-cell *matCellDef="let element"> {{element.tiempo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="alimentos">
+        <th class="alin3"  mat-header-cell *matHeaderCellDef> Alimentos </th>
+        <td class="alin3" mat-cell *matCellDef="let element"> {{element.alimentos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="carbohidratos">
+        <th class="alin4" mat-header-cell *matHeaderCellDef> Carbohidratos </th>
+        <td class="alin4" mat-cell *matCellDef="let element"> {{element.carbohidratos}} g. </td>
+      </ng-container>
+
+      <ng-container  matColumnDef="proteinas">
+        <th class="alin5" mat-header-cell *matHeaderCellDef> Proteinas </th>
+        <td class="alin5" mat-cell *matCellDef="let element"> {{element.proteinas}} g. </td>
+      </ng-container>
+
+      <ng-container matColumnDef="peso">
+        <th class="alin6" mat-header-cell *matHeaderCellDef> Peso </th>
+        <td class="alin6" mat-cell *matCellDef="let element"> {{element.peso}} g. </td>
+      </ng-container>
 
 
  <body>
@@ -82,6 +149,75 @@
   
       </table>
     </div>
-  
-  
-  </body>
+
+  </div>
+  <br>
+  <br>
+
+  <div class="flex-item-rigth">
+
+
+    <table mat-table [dataSource]="data">
+
+      <ng-container matColumnDef="id_dieta">
+        <th id="tii" class="tittle" mat-header-cell *matHeaderCellDef> Dieta </th>
+        <td id="tii" class="tittle" mat-cell *matCellDef="let element"> {{element.id_dieta}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nivel">
+        <th id="tiii" class="tittlee" mat-header-cell *matHeaderCellDef> Nivel </th>
+        <td id="tiii" class="" mat-cell *matCellDef="let element"> {{element.nivel}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tiempo">
+        <th mat-header-cell *matHeaderCellDef> Tiempo </th>
+        <td class="tim" mat-cell *matCellDef="let element"> {{element.tiempo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="alimentos">
+        <th class="alim" mat-header-cell *matHeaderCellDef> Alimentos </th>
+        <td class="alim" mat-cell *matCellDef="let element"> {{element.alimentos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="carbohidratos">
+        <th class="tittlec" mat-header-cell *matHeaderCellDef> Carbohidratos </th>
+        <td class="oneitt" mat-cell *matCellDef="let element"> {{element.carbohidratos}} g. </td>
+      </ng-container>
+
+      <ng-container matColumnDef="proteinas">
+        <th class="titllepr" mat-header-cell *matHeaderCellDef> Proteinas </th>
+        <td class="oneitt" mat-cell *matCellDef="let element"> {{element.proteinas}} g. </td>
+      </ng-container>
+
+      <ng-container matColumnDef="peso">
+        <th class="tittlep" mat-header-cell *matHeaderCellDef> Peso </th>
+        <td class="oneitt" mat-cell *matCellDef="let element"> {{element.peso}} g. </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="actions" class="mat-card">
+        <th mat-header-cell *matHeaderCellDef class="acciones"> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <div class="dieta-buttons">
+            <button id="btn" mat-raised-button (click)="getDietaById(element._id)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button id="btn" mat-raised-button (click)="updateDieta(element._id)" color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button id="btn" mat-raised-button (click)="deleteDieta(element)" color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+
+  </div>
+
+</div> -->

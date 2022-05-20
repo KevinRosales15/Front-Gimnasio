@@ -31,8 +31,13 @@ const routes: Routes = [
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   { path: 'lista-empleados', component:ListaEmpleadosComponent },
   { path: 'nuevarutina', component: NuevarutinaComponent },
+  { path: 'dietas', component: DietaComponent },
   { path: 'CrearClientes', component: RegistroClientesComponent }
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
+  
+
+
+
 ];
 
 @NgModule({

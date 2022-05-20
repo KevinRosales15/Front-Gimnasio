@@ -21,8 +21,8 @@ export class TablaempleadoService {
     return this.httpClient.put<any>(environment.END_POINTS.REGISTRO_EMPLEADOS,empleado);
   }
 
-  deleteRegistro(id: string): Observable<any> {
-    return this.httpClient.delete<any>(environment.END_POINTS.REGISTRO_EMPLEADOS,{body:{id}});
+  deleteRegistro(data: any): Observable<any> {
+    return this.httpClient.delete<any>(environment.END_POINTS.REGISTRO_EMPLEADOS,{body:{data}});
   }
   
   updateRegistro(empleado: any): Observable<any> {
