@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroClientesService } from 'src/app/services/registro_clientes/registro-clientes.service';
 import { Subscription } from 'rxjs';
-import { FormGroup, FormControl } from '@angular/forms'; 
+import { FormBuilder,FormGroup, FormControl,Validators } from '@angular/forms'; 
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { ToastrService } from 'ngx-toastr';
 import { RutinaService } from 'src/app/services/rutina/rutina.service';
@@ -15,20 +15,30 @@ import { Router } from '@angular/router';
 })
 export class RegistroClientesComponent implements OnInit {
 
-  datosClienteForm = new FormGroup({
-    nombreCompleto: new FormControl(''),
-    dpi: new FormControl(''),
-    fechaNacimiento: new FormControl(''),
-    email: new FormControl(''),
-    telefono: new FormControl(''),
-    noSucursal: new FormControl(''),
-    objetivo: new FormControl('')
-  });
-
+  datosClienteForm: FormGroup
+    nombreCompleto: String;
+    dpi: number;
+    fechaNacimiento: String;
+    email: String;
+    telefono: number;
+    noSucursal: number;
+    objetivo: number;
+ 
+    constructor(private registroClientesService: RegistroClientesService, private fb: FormBuilder,private rutinaService: RutinaService, private toastr: ToastrService, private router: Router) {
+      this.datosClienteForm = this.fb.group({
+        nombreCompleto: ['', Validators.required],
+        dpi: ['', Validators.required],
+        fechaNacimiento: ['', Validators.required],
+        email: ['', Validators.required],
+        telefono: ['', Validators.required],
+        noSucursal: ['', Validators.required],
+        objetivo: ['', Validators.required],
+      })
+     }
   cliente$: Subscription;
   identificador: number;
 
-  constructor(private registroClientesService: RegistroClientesService, private rutinaService: RutinaService, private toastr: ToastrService, private router: Router) { }
+  
 
   ngOnInit(): void {
     try {

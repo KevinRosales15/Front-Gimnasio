@@ -5,6 +5,12 @@ export interface cliente {
     fechaNacimiento: string;
     email: string;
     telefono: string;
-    noSucursal: number;
     objetivo: number;
+    noSucursal: number;
+    mensualidad:number;
+    moroso: string;
+    montoMora: number;
+    estado: string;
+    cantUltimoPago: number;
+    fechaPago: string;
 }
