@@ -101,11 +101,11 @@ export class ListarClientesComponent implements OnInit {
           <strong style="text-align: left; display: block;"> Nombre completo </strong><br>
           <input type="text" id="nombreCompleto" value="${cliente.nombreCompleto}"  class="form-control" ><br>
           <strong style="text-align: left; display: block;"> dpi </strong><br>
-          <input type="text"  id="dpi"  value="${cliente.dpi}"   class="form-control"><br>
+          <input type="text"  id="dpi"  value="${cliente.dpi}"   class="form-control" maxlength="13" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"><br>
           <strong style="text-align: left; display: block;"> email </strong><br>
-          <input type="text" id="email"  value="${cliente.email}"  class="form-control "  ><br>
+          <input type="text" id="email"  value="${cliente.email}"  class="form-control "><br>
           <strong style="text-align: left; display: block;"> telefono </strong><br>
-          <input type="number" id="telefono" value="${cliente.telefono}"  class="form-control"  ><br>
+          <input type="number" id="telefono" value="${cliente.telefono}"  class="form-control" maxlength="8" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"><br>
           <strong style="text-align: left; display: block;"> Fecha de nacimiento </strong><br>
           <input type="date" id="fechaNacimiento" value="${cliente.fechaNacimiento}"  class="form-control"  ><br>
           <strong style="text-align: left; display: block;"> objetivo </strong><br>

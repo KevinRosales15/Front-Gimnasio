@@ -14,7 +14,7 @@
                       </div>
                       <div class="mb-3">
                           <input type="number" formControlName="dpi" class="form-control form-control-lg"
-                              placeholder="DPI">
+                              placeholder="DPI" maxlength="13" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                           <div class="text-danger"*ngIf="empleadoForm.get('dpi')?.hasError('required') && empleadoForm.get('dpi')?.touched">
                               <span>El dpi <strong>es obligatoria</strong></span>
                           </div>   
@@ -35,7 +35,7 @@
                       </div>
                       <div class="mb-3">
                         <input type="number" formControlName="telefono" class="form-control form-control-lg"
-                            placeholder="Telefono">
+                            placeholder="Telefono" maxlength="8" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                         <div class="text-danger"*ngIf="empleadoForm.get('telefono')?.hasError('required') && empleadoForm.get('telefono')?.touched">
                             <span>El telefono <strong>es obligatorio</strong></span>
                         </div>
