@@ -32,7 +32,6 @@ import { PaginacionPipe } from './pipes/paginacion.pipe';
 import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
 import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
-import { DietaComponent } from './components/dieta/dieta.component';
 import {MatSelectModule} from '@angular/material/select';
 
 
@@ -52,9 +51,9 @@ import {MatSelectModule} from '@angular/material/select';
     ListaEmpleadosComponent,
     PaginacionRutinasPipe,
     NuevarutinaComponent,
-    DietaComponent,
     RegistroClientesComponent,
-    ListarClientesComponent
+    ListarClientesComponent,
+    RegistroClientesComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +71,7 @@ import {MatSelectModule} from '@angular/material/select';
     SocketIoModule,
     MatTooltipModule,
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

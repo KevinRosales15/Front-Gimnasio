@@ -81,7 +81,7 @@ export class RutinaComponent implements OnInit {
           <strong style="text-align: left; display: block;"> ID objetivo </strong><br>
           <input type="number"  id="id_objetivo"  value="${rutina.id_objetivo}"   class="form-control"><br>
           <strong style="text-align: left; display: block;"> ID dieta </strong><br>
-          <input type="text"  id="id_dieta"  value="${rutina.id_dieta}"   class="form-control"><br>
+          <input type="number"  id="id_dieta"  value="${rutina.id_dieta}"   class="form-control"><br>
           <strong style="text-align: left; display: block;"> Nivel </strong><br>
           <input type="number" id="nivel"  value="${rutina.nivel}"  class="form-control " ><br>
           <strong style="text-align: left; display: block;"> Día </strong><br>
@@ -109,8 +109,9 @@ export class RutinaComponent implements OnInit {
         const id = rutina._id;
         const idRutina = Number(id_rutina);
         const idObjetivo = Number(id_objetivo);
+        const idDieta = Number(id_dieta)
         const nivel = Number(nivelRutina);
-        const RutinaUpdate = {id,idRutina, idObjetivo, id_dieta, nivel, dia, musculo, ejercicios};
+        const RutinaUpdate = {id,idRutina, idObjetivo, idDieta, nivel, dia, musculo, ejercicios};
         console.log("objeto para Update",RutinaUpdate);
         this.rutina$ = this.rutinaService.updateRutina(RutinaUpdate).subscribe(data => {
           this.toastr.info('La rutina fue editada con exíto', 'Rutina Editada!');

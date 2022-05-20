@@ -41,8 +41,8 @@ export class ListaEmpleadosComponent implements OnInit {
   }
 
 
-  DialogEliminarEmpleados(id: any){
-    console.log('id a eliminar',id);
+  DialogEliminarEmpleados(empleado: any){
+    console.log('id a eliminar',empleado);
     Swal.fire({
       title:'Se eliminará el empleado',
       text: 'Esta acción no puede revertirse',
@@ -55,7 +55,7 @@ export class ListaEmpleadosComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then(result =>{
       if(result.value){
-        this.empleado$ = this.tablaempleadoService.deleteRegistro(id).subscribe(data => {
+        this.empleado$ = this.tablaempleadoService.deleteRegistro(empleado).subscribe(data => {
           this.toastr.error('El empleado fue eliminado con exíto', 'Empleado Eliminado!');
           this.getRegistro();
         })

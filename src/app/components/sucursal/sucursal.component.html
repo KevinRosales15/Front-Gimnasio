@@ -15,7 +15,7 @@
                         <div class="mb-3">
                             <input type="text" formControlName="direccion" class="form-control form-control-lg"
                                 placeholder="Dirección" *ngIf="sucursalForm.get('noSucursal')?.valid">
-                            <div class="text-danger"*ngIf="sucursalForm.get('direccion')?.hasError('required') && sucursalForm.get('direccion')?.touched">
+                            <div class="text-danger"*ngIf="sucursalForm.get('direccion')?.hasError('required') && sucursalForm.get('direccion')?.touched && sucursalForm.get('noSucursal')?.valid">
                                 <span>La dirreción <strong>es obligatoria</strong></span>
                             </div>   
                         </div>

@@ -12,7 +12,6 @@ import { AdminComponent } from './components/roles/admin/admin.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
 import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
-import { DietaComponent } from './components/dieta/dieta.component';
 import { RegistroClientesComponent } from './components/registro-clientes/registro-clientes.component';
 import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
 
@@ -27,13 +26,16 @@ const routes: Routes = [
   { path: 'crear-sucursal', component: SucursalComponent },
   { path: 'editar-sucursal', component: SucursalComponent },
   { path: 'rutinas', component: RutinaComponent },
-  { path: 'dietas', component: DietaComponent },
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   { path: 'lista-empleados', component:ListaEmpleadosComponent },
   { path: 'nuevarutina', component: NuevarutinaComponent },
   { path: 'CrearClientes', component: RegistroClientesComponent },
   { path: 'ListarClientes', component: ListarClientesComponent },
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
+  
+
+
+
 ];
 
 @NgModule({
