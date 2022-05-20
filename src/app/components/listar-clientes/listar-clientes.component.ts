@@ -66,13 +66,12 @@ export class ListarClientesComponent implements OnInit {
   getClientes(){
     this.cliente$ = this.clientesService.getClientes().subscribe(entry =>{
       this.listCliente = entry.clientes;
-      console.log('sucursales',this.listCliente);
     });
   }
 
 
-  DialogEliminarCliente(id: any){
-    console.log('id a eliminar',id);
+  DialogEliminarCliente(cliente: any){
+    console.log('id a eliminar',cliente);
     Swal.fire({
       title:'Se va a eliminar el cliente',
       text: 'Esta acción no puede revertirse',
@@ -85,7 +84,7 @@ export class ListarClientesComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then(result =>{
       if(result.value){
-        this.cliente$ = this.clientesService.deleteClientes(id).subscribe(data => {
+        this.cliente$ = this.clientesService.deleteClientes(cliente).subscribe(data => {
           this.toastr.error('El cliente fue eliminado con exíto', 'Cliente Eliminado!');
           this.getClientes();
         })
