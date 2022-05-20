@@ -58,6 +58,6 @@
               </mat-form-field> 
               <br>
               
-              <button mat-raised-button color="primary" class="signUp" type="submit">Sign Up</button>
+              <button mat-raised-button color="primary" class="signUp" type="submit" [disabled]="datosClienteForm.invalid">Sign Up</button>
             </form>
         </mat-card-content>

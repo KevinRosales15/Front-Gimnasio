@@ -40,7 +40,7 @@ export class MasterComponent implements OnInit {
   }
 
   accederDietas() {
-    /* this.router.navigate(['/'], {state: {blocker: this.identificador}}); */
+    this.router.navigate(['/dietas'], {state: {blocker: this.identificador}});
   }
 
 }

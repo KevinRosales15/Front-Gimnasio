@@ -4,7 +4,7 @@
     </div>
       <div class="container mt-5">
           <div class="row">
-              <div class="col-lg-8 offset-lg-1">
+              <div class="col-lg-auto offset-lg-center">
                   <div class="card">
                       <div class="card-body text-center">
                           <span class="titulo">LISTADO DE CLIENTES</span>
@@ -18,7 +18,13 @@
                                   <th scope="col">Telefono</th>
                                   <th scope="col">Fecha nacimiento</th>
                                   <th scope="col">Objetivo</th>
-                                  <th scope="col">Dieta</th>
+                                  <th scope="col">No. Sucursal</th>
+                                  <th scope="col">Mensualidad</th>
+                                  <th scope="col">Moroso</th>
+                                  <th scope="col">Monto Mora</th>
+                                  <th scope="col">Estado</th>
+                                  <th scope="col">Ultimo Pago</th>
+                                  <th scope="col">Fecha Pago</th>
                                   <th scope="col"></th>
                                 </tr>
                               </thead>
@@ -30,7 +36,13 @@
                                   <td>{{cliente.telefono}}</td>
                                   <td>{{cliente.fechaNacimiento}}</td>
                                   <td>{{cliente.objetivo}}</td>
-                                  <td>{{cliente.dieta}}</td>
+                                  <td>{{cliente.noSucursal}}</td>
+                                  <td>{{cliente.mensualidad}}</td>
+                                  <td>{{cliente.moroso}}</td>
+                                  <td>{{cliente.montoMora}}</td>
+                                  <td>{{cliente.estado}}</td>
+                                  <td>{{cliente.cantUltimoPago}}</td>
+                                  <td>{{cliente.fechaPago}}</td>
                                   <td>
                                       <i (click)="DialogEditarCliente(cliente)"  class="editar fa-solid fa-pen-to-square" matTooltip="Editar Cliente" matTooltipPosition="left" matTooltipClass="TooltipEditar" ></i>
                                       <i (click)="DialogEliminarCliente(cliente)"  class="eliminar fa-solid fa-delete-left" matTooltip="Eliminar Cliente" matTooltipPosition="right" matTooltipClass="TooltipEliminar" ></i>
