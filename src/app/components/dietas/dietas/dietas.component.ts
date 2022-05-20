@@ -104,22 +104,22 @@ export class DietasComponent implements OnInit {
           <strong style="text-align: left; display: block;"> ID objetivo </strong><br>
           <input type="number"  id="id_objetivo"  value="${dieta.id_objetivo}"   class="form-control"><br>
 
-          <strong style="text-align: left; display: block;"> ID dieta </strong><br>
+          <strong style="text-align: left; display: block;"> Nivel </strong><br>
           <input type="number"  id="nivel"  value="${dieta.nivel}"   class="form-control"><br>
 
-          <strong style="text-align: left; display: block;"> Nivel </strong><br>
+          <strong style="text-align: left; display: block;"> Tiempo </strong><br>
           <input type="text" id="tiempo"  value="${dieta.tiempo}"  class="form-control " ><br>
           
-          <strong style="text-align: left; display: block;"> Día </strong><br>
+          <strong style="text-align: left; display: block;"> Alimentos </strong><br>
           <input type="text" id="alimentos" value="${dieta.alimentos}"  class="form-control" ><br>
 
-          <strong style="text-align: left; display: block;"> Músculo </strong><br>
+          <strong style="text-align: left; display: block;"> Carbohidratos </strong><br>
           <input type="number"  id="carbohidratos"  value="${dieta.carbohidratos}"   class="form-control"><br>
 
-          <strong style="text-align: left; display: block;"> Ejercicios </strong><br>
+          <strong style="text-align: left; display: block;"> Proteinas </strong><br>
           <input type="number"  id="proteinas"  value="${dieta.proteinas}"   class="form-control"><br>
 
-          <strong style="text-align: left; display: block;"> Ejercicios </strong><br>
+          <strong style="text-align: left; display: block;"> Peso </strong><br>
           <input type="number" id="peso"  value="${dieta.peso}"   class="form-control"><br>
         </form>
       `,
@@ -141,10 +141,7 @@ export class DietasComponent implements OnInit {
         const Proteinas = (<HTMLInputElement>document.getElementById("proteinas")).value;
         const Peso = (<HTMLInputElement>document.getElementById("peso")).value;
         
-
-        console.log("MSG TIEMPO", tiempo)
-
-        const id = dieta._id;
+        const _id = dieta._id;
         const id_dieta = Number(iddieta);
         const id_objetivo = Number(idobjetivo);
         const nivel = Number(nivel_d);
@@ -156,7 +153,7 @@ export class DietasComponent implements OnInit {
 
 
 
-        const DietaUpdate = {id, id_dieta, id_objetivo, nivel, tiempo, alimentos, carbohidratos, proteinas, peso};
+        const DietaUpdate = { _id, id_dieta, id_objetivo, nivel, tiempo, alimentos, carbohidratos, proteinas, peso};
         console.log("objeto para Update",DietaUpdate);
         this.dieta$ = this.dietaService.updateDieta(DietaUpdate).subscribe(data => {
           this.toastr.info('La dieta fue editada con exíto', 'Dieta Editada!');

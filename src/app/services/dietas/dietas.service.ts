@@ -24,8 +24,9 @@ export class DietasService {
     return this.httpClient.put<any>(`${environment.END_POINTS.DIETA}/create`, dieta );
   }
 
-  updateDieta( _id: any ): Observable<any>{
-    return this.httpClient.put<any>(`${environment.END_POINTS.DIETA}/update`, _id );
+  updateDieta( data: any ): Observable<any>{
+    console.log("data updatedieta desde services ----- \n", data)
+    return this.httpClient.post<any>(`${environment.END_POINTS.DIETA}/update`, data );
   }
 
   getDietasById(_id: any): Observable<any>{
