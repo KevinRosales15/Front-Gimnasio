@@ -1,55 +1,47 @@
-<body>
+<body style="background-image: url(../../../../assets/roles/images/index-MV.jpg);">
 
-    <div class="contenedor">
-        <h1 class="tituloInicial">
-            <i class="fa-solid fa-person-chalkboard"></i> Instructor
+    <div class="container-fluid container-web-page">
+        <h1 class="text-center text-uppercase poppins-regular font-weight-bold">
+            <i class="fa-solid fa-person-chalkboard"></i>  Instructor
         </h1>
-
-        <div class="Contenedor-botones2">
-
-            <button class="botonPrincipal">
-                <li class="enlace" id="Clientes">
-                    <a href="#Clientes" class="padre">
-                        <i class="fa-solid fa-people-robbery"></i>Clientes
-                    </a>
-                    <div class="submenu">
-                        <a href="#">Ver Todos</a>
+        <div class="container-cards full-box">
+                
+                <div class="card shadow-1-strong">
+                    <img class="card-img-top" src="../../../../assets/roles/images/clientes.jpg" alt="nombre_platillo">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Clientes</h5>
                     </div>
-                </li>
-            </button><br>
-
-            <button class="botonPrincipal">
-                <li class="enlace" id="Rutinas">
-                    <a href="#Rutinas" class="padre">
-                        <i class="fa-solid fa-person-walking"></i>Rutinas
-                    </a>
-                    <div class="submenu">
-                        <a href="#">Ver Todos</a>
+                    <div class="card-body text-center">
+                        <a href="#" class="btn btn-info btn-sm">&nbsp; Listar</a>
                     </div>
-                </li>
-            </button><br>
-
-            <button class="botonPrincipal">
-                <li class="enlace" id="Dietas">
-                    <a href="#Dietas" class="padre">
-                        <i class="fa-solid fa-calendar-day"></i>Dietas
-                    </a>
-                    <div class="submenu">
-                        <a href="#">Ver Todos</a>
+                </div>
+    
+                
+                <div class="card shadow-1-strong">
+                    <img class="card-img-top" src="../../../../assets/roles/images/rutinas.jpg" alt="nombre_platillo">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Rutinas</h5>
                     </div>
-                </li>
-            </button><br><br>
-
-            <button class="botonSalir">
-                <li class="enlace" id="salir">
-                    <a href="../../index.html" class="padre">
-                        <i class="fa-solid fa-right-from-bracket"></i>Salir Sesión
-                    </a>
-                </li>
-            </button><br><br>
-        
+                    <div class="card-body text-center">
+                        <a routerLink="/rutinas" class="btn btn-info btn-sm">&nbsp; Listar</a>
+                        </div>
+                </div>
+    
+                
+                <div class="card shadow-1-strong">
+                    <img class="card-img-top" src="../../../../assets/roles/images/dietas.jpg" alt="nombre_platillo">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Dietas</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="#" class="btn btn-info btn-sm">&nbsp; Listar</a>
+                    </div>
+                </div>
+    
         </div>
+        <br>
+        <p class="text-center"><a routerLink="/login" class="btn btn-primary">&nbsp; Salir</a></p>
+    
     </div>
     <script src="https://kit.fontawesome.com/5996916878.js" crossorigin="anonymous"></script>
-
 </body>
