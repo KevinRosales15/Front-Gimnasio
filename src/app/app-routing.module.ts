@@ -32,9 +32,6 @@ const routes: Routes = [
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
   
-
-
-
 ];
 
 @NgModule({
