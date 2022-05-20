@@ -5,14 +5,14 @@
                 <div class="card-body text-center">
                     <span class="titulo"> {{titulo | uppercase }}</span>
                     <form class="mt-3" [formGroup]="dietaForm" (ngSubmit)="agregarDieta()">
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <input type="number" formControlName="id_dieta" class="form-control form-control-lg"
                                 placeholder="ID dieta">
                             <div class="text-danger"
                                 *ngIf="dietaForm.get('id_dieta')?.hasError('required') && dietaForm.get('id_dieta')?.touched">
                                 <span>El ID de dieta <strong>es obligatorio</strong></span>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="mb-3">
                             <input type="number" formControlName="id_objetivo" class="form-control form-control-lg"
                                 placeholder="ID objetivo">
@@ -26,7 +26,7 @@
                                 placeholder="Nivel">
                             <div class="text-danger"
                                 *ngIf="dietaForm.get('nivel')?.hasError('required') && dietaForm.get('nivel')?.touched">
-                                <span>El ID de la dieta <strong>es obligatorio</strong></span>
+                                <span>El nivel <strong>es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -34,7 +34,7 @@
                                 placeholder="Tiempo">
                             <div class="text-danger"
                                 *ngIf="dietaForm.get('tiempo')?.hasError('required') && dietaForm.get('tiempo')?.touched">
-                                <span>El nivel de dieta <strong>es obligatorio</strong></span>
+                                <span>El tiempo <strong>es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -42,7 +42,7 @@
                                 placeholder="Alimentos">
                             <div class="text-danger"
                                 *ngIf="dietaForm.get('alimentos')?.hasError('required') && dietaForm.get('alimentos')?.touched">
-                                <span>El día <strong>es obligatorio</strong></span>
+                                <span>Los alimentos <strong>son obligatorios</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -50,7 +50,7 @@
                                 placeholder="Carbohidratos">
                             <div class="text-danger"
                                 *ngIf="dietaForm.get('carbohidratos')?.hasError('required') && dietaForm.get('carbohidratos')?.touched">
-                                <span>El músculo <strong>es obligatorio</strong></span>
+                                <span>Los carboidratos <strong>son obligatorios</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -58,7 +58,7 @@
                                 placeholder="Proteinas">
                             <div class="text-danger"
                                 *ngIf="dietaForm.get('proteinas')?.hasError('required') && dietaForm.get('proteinas')?.touched">
-                                <span>Los ejercicios <strong>son obligatorios</strong></span>
+                                <span>Las proteinas <strong>son obligatorias</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -66,13 +66,12 @@
                                 placeholder="Peso">
                             <div class="text-danger"
                                 *ngIf="dietaForm.get('peso')?.hasError('required') && dietaForm.get('peso')?.touched">
-                                <span>Los ejercicios <strong>son obligatorios</strong></span>
+                                <span>El peso <strong>es obligatorios</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <button routerLink="/dietas" class="btn btn-secondary btn-lg float-start">VOLVER</button>
-                            <button type="submit" [disabled]="dietaForm.invalid"
-                                class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                            <button (click)="volver()" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                            <button type="submit" [disabled]="dietaForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
                         </div>
                     </form>
                 </div>

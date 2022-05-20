@@ -141,8 +141,10 @@ export class DietasComponent implements OnInit {
         const Proteinas = (<HTMLInputElement>document.getElementById("proteinas")).value;
         const Peso = (<HTMLInputElement>document.getElementById("peso")).value;
         
-        const id = dieta._id;
 
+        console.log("MSG TIEMPO", tiempo)
+
+        const id = dieta._id;
         const id_dieta = Number(iddieta);
         const id_objetivo = Number(idobjetivo);
         const nivel = Number(nivel_d);
