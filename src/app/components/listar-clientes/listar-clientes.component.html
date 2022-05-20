@@ -1,0 +1,55 @@
+<body>
+    <div class ="ButtonHome">
+      <button  routerLink="/master"><i class="fa-solid fa-angles-left"></i>Volver</button>
+    </div>
+      <div class="container mt-5">
+          <div class="row">
+              <div class="col-lg-8 offset-lg-1">
+                  <div class="card">
+                      <div class="card-body text-center">
+                          <span class="titulo">LISTADO DE CLIENTES</span>
+                          <button class="btn btn-success float-end" routerLink="/CrearClientes">CREAR</button>
+                          <table *ngIf="listCliente.length>0 " class="table table-striped mt-3">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Nombre del cliente</th>
+                                  <th scope="col">No. DPI</th>
+                                  <th scope="col">email</th>
+                                  <th scope="col">Telefono</th>
+                                  <th scope="col">Fecha nacimiento</th>
+                                  <th scope="col">Objetivo</th>
+                                  <th scope="col">Dieta</th>
+                                  <th scope="col"></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let cliente of listCliente | paginacion: page_size: page_number">
+                                  <td>{{cliente.nombreCompleto}}</td>
+                                  <td>{{cliente.dpi}}</td>
+                                  <td>{{cliente.email}}</td>
+                                  <td>{{cliente.telefono}}</td>
+                                  <td>{{cliente.fechaNacimiento}}</td>
+                                  <td>{{cliente.objetivo}}</td>
+                                  <td>{{cliente.dieta}}</td>
+                                  <td>
+                                      <i (click)="DialogEditarCliente(cliente)"  class="editar fa-solid fa-pen-to-square" matTooltip="Editar Cliente" matTooltipPosition="left" matTooltipClass="TooltipEditar" ></i>
+                                      <i (click)="DialogEliminarCliente(cliente._id)"  class="eliminar fa-solid fa-delete-left" matTooltip="Eliminar Cliente" matTooltipPosition="right" matTooltipClass="TooltipEliminar" ></i>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <mat-paginator 
+                            [length]="listCliente.length"
+                            [pageSize]="page_size"
+                            [pageSizeOptions]="pageSizeOptions"
+                            (page)="handlePage($event)">
+                            </mat-paginator>
+                            <h3 *ngIf="listCliente.length == 0 " style="text-align: center; margin-top: 20px;">No hay clientes para mostrar</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </body>
+
+  

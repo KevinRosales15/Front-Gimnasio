@@ -3,6 +3,7 @@ import { RegistroClientesService } from 'src/app/services/registro_clientes/regi
 import { Subscription } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms'; 
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-registro-clientes',
@@ -23,7 +24,7 @@ export class RegistroClientesComponent implements OnInit {
 
   cliente$: Subscription;
 
-  constructor(private registroClientesService: RegistroClientesService) { }
+  constructor(private registroClientesService: RegistroClientesService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -33,5 +34,4 @@ export class RegistroClientesComponent implements OnInit {
       console.log("Resultado", entry);
     });
   }
-
 }

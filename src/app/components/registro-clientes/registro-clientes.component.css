@@ -10,3 +10,10 @@
     cursor: pointer;
     border: 2px solid black;
 }
+ .example-form{
+     font-size: 15px;
+ }
+ .signUp{
+     width: 90px;
+     height: 50px;
+ }

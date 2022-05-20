@@ -13,6 +13,17 @@ export class RegistroClientesService {
 
   putDatos(data:any): Observable<any> {
     console.log('data',data);
-    return this.httpClient.put<any>(environment.END_POINTS.REGISTRO_CLIENTES, {}, { params: data });
+    return this.httpClient.put<any>(environment.END_POINTS.REGISTRO_CLIENTES,data);
+  }
+
+  getClientes(): Observable<any> {
+  return this.httpClient.get<any>(environment.END_POINTS.REGISTRO_CLIENTES);
+  }
+
+  deleteClientes(id: string): Observable<any> {
+    return this.httpClient.delete<any>(environment.END_POINTS.REGISTRO_CLIENTES,{body:{id}});
+  }
+  updateClientes(ClienteUpdate: any): Observable<any> {
+    return this.httpClient.post<any>(environment.END_POINTS.REGISTRO_CLIENTES,ClienteUpdate);
   }
 }

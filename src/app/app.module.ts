@@ -21,6 +21,7 @@ import { MasterComponent } from './components/roles/master/master.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagoPlataformaComponent } from './components/pago-plataforma/pago-plataforma.component';
 import { RegistroClientesComponent } from './components/registro-clientes/registro-clientes.component';
+import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
 import { SucursalComponent } from './components/sucursal/sucursal.component';
 import { ListarSucursalComponent } from './components/listar-sucursal/listar-sucursal.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -33,7 +34,6 @@ import { PaginacionRutinasPipe } from './pipes/paginacion-rutinas.pipe';
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
 import { DietaComponent } from './components/dieta/dieta.component';
 import {MatSelectModule} from '@angular/material/select';
-
 
 
 @NgModule({
@@ -53,7 +53,8 @@ import {MatSelectModule} from '@angular/material/select';
     PaginacionRutinasPipe,
     NuevarutinaComponent,
     DietaComponent,
-    RegistroClientesComponent
+    RegistroClientesComponent,
+    ListarClientesComponent
   ],
   imports: [
     BrowserModule,

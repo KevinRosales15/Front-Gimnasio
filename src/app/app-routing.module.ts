@@ -14,7 +14,7 @@ import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empl
 import { NuevarutinaComponent } from './components/nuevarutina/nuevarutina/nuevarutina.component';
 import { DietaComponent } from './components/dieta/dieta.component';
 import { RegistroClientesComponent } from './components/registro-clientes/registro-clientes.component';
-
+import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -31,7 +31,8 @@ const routes: Routes = [
   { path: 'pagoPlataforma', component: PagoPlataformaComponent },
   { path: 'lista-empleados', component:ListaEmpleadosComponent },
   { path: 'nuevarutina', component: NuevarutinaComponent },
-  { path: 'CrearClientes', component: RegistroClientesComponent }
+  { path: 'CrearClientes', component: RegistroClientesComponent },
+  { path: 'ListarClientes', component: ListarClientesComponent },
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
 
